@@ -1,52 +1,12 @@
-webpackJsonp([0],{
+webpackJsonp([4],{
 
-/***/ 153:
+/***/ 150:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_shops__ = __webpack_require__(422);
-
-var ShopService = /** @class */ (function () {
-    function ShopService() {
-        this.shops = __WEBPACK_IMPORTED_MODULE_0__data_shops__["a" /* default */];
-    }
-    ShopService.prototype.getShop = function (id) {
-        return this.shops.find(function (shop) {
-            return shop.id == id;
-        });
-    };
-    ShopService.prototype.getAllShops = function () { return this.shops; };
-    ;
-    ShopService.prototype.addShop = function (shop) {
-        __WEBPACK_IMPORTED_MODULE_0__data_shops__["a" /* default */].push(shop);
-    };
-    ShopService.prototype.getNextId = function () {
-        return __WEBPACK_IMPORTED_MODULE_0__data_shops__["a" /* default */][__WEBPACK_IMPORTED_MODULE_0__data_shops__["a" /* default */].length - 1].id + 1;
-    };
-    return ShopService;
-}());
-
-//# sourceMappingURL=shops.js.map
-
-/***/ }),
-
-/***/ 154:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LivroEditPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NiveisPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_livros__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_chooser__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_base64__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,252 +18,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-
-
-
-
-
-var LivroEditPage = /** @class */ (function () {
-    function LivroEditPage(domSanitizationService, navParams, livroService, camera, viewCtrl, file, fileChooser, filePath, base64) {
-        this.domSanitizationService = domSanitizationService;
+/**
+ * Generated class for the NiveisPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var NiveisPage = /** @class */ (function () {
+    function NiveisPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.livroService = livroService;
-        this.camera = camera;
-        this.viewCtrl = viewCtrl;
-        this.file = file;
-        this.fileChooser = fileChooser;
-        this.filePath = filePath;
-        this.base64 = base64;
-        this.CAPA_DEFAULT = "https://cor-cdn-static.bibliocommons.com/assets/default_covers/icon-book-93409e4decdf10c55296c91a97ac2653.png";
     }
-    LivroEditPage.prototype.escolherPDF = function () {
-        var _this = this;
-        this.fileChooser.open()
-            .then(function (uri) {
-            console.log('Relative Path: ' + uri);
-            _this.filePath.resolveNativePath(uri).then(function (resolvedFilePath) {
-                _this.base64.encodeFile(resolvedFilePath).then(function (base64File) {
-                    var selectedPDF = _this.dataURItoBlob(base64File, true);
-                    _this.uploadToDB(selectedPDF, true);
-                    _this.outlineIconeLivro = true;
-                }, function (err) {
-                    console.log(err);
-                });
-            });
-        })
-            .catch(function (e) { return console.log(e); });
+    NiveisPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad NiveisPage');
     };
-    LivroEditPage.prototype.ionViewDidLoad = function () {
-        this.livro = this.navParams.get('livro');
-        if (!this.livro.pdf)
-            this.outlineIconeLivro = true;
-        else
-            this.outlineIconeLivro = false;
-    };
-    LivroEditPage.prototype.ngOnInit = function () {
-        this.livro = this.navParams.get('livro');
-    };
-    LivroEditPage.prototype.salvarLivro = function (form) {
-        var novoLivro = this.livro;
-        novoLivro.titulo = form.value.titulo;
-        novoLivro.autor = form.value.autor;
-        novoLivro.dtLancamento = form.value.dtLancamento;
-        //DEBUG
-        console.log('this.livro');
-        console.log(this.livro);
-        console.log('novoLivro');
-        console.log(novoLivro);
-        this.livroService.atualizarLivro(novoLivro);
-        this.viewCtrl.dismiss();
-    };
-    LivroEditPage.prototype.onMudarCapa = function () {
-        var _this = this;
-        var options = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
-        };
-        this.camera.getPicture(options).then(function (imageData) {
-            var base64Image = 'data:image/jpeg;base64,' + imageData;
-            var selectedPhoto = _this.dataURItoBlob(base64Image, false);
-            _this.uploadToDB(selectedPhoto, false);
-            _this.mudarImagemCapa(base64Image);
-        }, function (err) {
-            // Handle error
-            console.log("erro ao capturar imagen");
-            console.log(err);
-        });
-    };
-    LivroEditPage.prototype.onMudarCapaGaleria = function () {
-        var _this = this;
-        var options = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-            saveToPhotoAlbum: false
-            // encodingType: this.camera.EncodingType.JPEG,
-            // mediaType: this.camera.MediaType.PICTURE
-        };
-        this.camera.getPicture(options).then(function (imageData) {
-            var base64Image = 'data:image/jpeg;base64,' + imageData;
-            var selectedPhoto = _this.dataURItoBlob(base64Image, false);
-            _this.uploadToDB(selectedPhoto, false);
-            _this.mudarImagemCapa(base64Image);
-        }, function (err) {
-            // Handle error
-            console.log("erro ao capturar imagem");
-            console.log(err);
-        });
-    };
-    LivroEditPage.prototype.mudarImagemCapa = function (img64) {
-        this.livro.capa = img64;
-    };
-    LivroEditPage.prototype.sanitizeBase64 = function (capa) {
-        this.domSanitizationService.bypassSecurityTrustUrl(capa);
-    };
-    LivroEditPage.prototype.validaCapa = function (capa) {
-        if (!capa)
-            return this.CAPA_DEFAULT;
-        else
-            return capa;
-    };
-    LivroEditPage.prototype.dataURItoBlob = function (dataURI, pdf) {
-        // code adapted from: http://stackoverflow.com/questions/33486352/cant-upload-image-to-aws-s3-from-ionic-camera
-        var binary = atob(dataURI.split(',')[1]);
-        var array = [];
-        for (var i = 0; i < binary.length; i++) {
-            array.push(binary.charCodeAt(i));
-        }
-        if (!pdf)
-            return new Blob([new Uint8Array(array)], { type: 'image/jpeg' });
-        else
-            return new Blob([new Uint8Array(array)], { type: 'application/pdf' });
-    };
-    ;
-    LivroEditPage.prototype.uploadToDB = function (selectedFile, pdf) {
-        if (selectedFile) {
-            var self_1 = this;
-            var uploadTask = void 0;
-            if (!pdf)
-                uploadTask = __WEBPACK_IMPORTED_MODULE_9_firebase__["storage"]().ref().child('/' + this.livro.key.toString() + '/image').put(selectedFile);
-            else
-                uploadTask = __WEBPACK_IMPORTED_MODULE_9_firebase__["storage"]().ref().child('/' + this.livro.key.toString() + '/pdf').put(selectedFile);
-            uploadTask.then(function (snapshot) {
-                if (!pdf) {
-                    self_1.livroService.atualizarAtributo('capa', self_1.livro.key, snapshot.downloadURL);
-                    self_1.capaAtual = snapshot.downloadURL;
-                }
-                else {
-                    self_1.livroService.atualizarAtributo('pdf', self_1.livro.key, snapshot.downloadURL);
-                    self_1.pdfAtual = snapshot.downloadURL;
-                }
-            }, function () {
-                console.log("erro");
-            });
-        }
-    };
-    LivroEditPage = __decorate([
+    NiveisPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-livro-edit',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\livro-edit\livro-edit.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Editar Livro\n    </ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="contentMain">\n      <ion-row justify-content-center padding>\n        <img style="max-height: 200px; width:auto"\n             [src]="validaCapa(livro.capa)"/>\n      </ion-row>\n\n\n      <ion-row justify-content-center padding>\n          <button\n                  ion-button\n                  icon-only\n                  width="120"\n                  height="180"\n                  (click)="onMudarCapa()"\n          >\n            <ion-icon name="camera"></ion-icon>\n          </button>\n\n          <button\n            ion-button\n            (click)="onMudarCapaGaleria()"\n            icon-only>\n            <ion-icon name="image"></ion-icon>\n          </button>\n\n          <button ion-button\n                  [outline]="outlineIconeLivro"\n                  icon-only\n                  width="120"\n                  height="180"\n                  color="danger2"\n                  (click)="escolherPDF()"\n                  style="margin-left: 30px;padding-left: 10px"\n          >\n            Arquivo PDF\n            <ion-icon color="danger" name="document"></ion-icon>\n          </button>\n      </ion-row>\n\n  <form (ngSubmit)="salvarLivro(f)" #f="ngForm">\n  <ion-list>\n    <ion-item>\n      <ion-label inset>Título</ion-label>\n      <ion-input type="text" placeholder="Título" name="titulo" ngModel required [(ngModel)]="livro.titulo"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label inset>Autor</ion-label>\n      <ion-input type="text" placeholder="Autor" name="autor" ngModel required [(ngModel)]="livro.autor"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Data de Lançamento</ion-label> <ion-datetime [placeholder]="livro.dtLancamento" name="dtLancamento" displayFormat="DD/MM/YYYY"  [(ngModel)]="livro.dtLancamento" required></ion-datetime>\n    </ion-item>\n\n    <ion-row justify-content-between padding>\n      <button ion-button class="submit-btn centralized" type="submit" centralized [disabled]="!f.valid">Salvar</button>\n    </ion-row>\n  </ion-list>\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\livro-edit\livro-edit.html"*/,
+            selector: 'page-niveis',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/'<!--\n  Generated template for the NiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Níveis</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__services_livros__["a" /* LivroServiceFirebase */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_file__["a" /* File */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_chooser__["a" /* FileChooser */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_path__["a" /* FilePath */],
-            __WEBPACK_IMPORTED_MODULE_8__ionic_native_base64__["a" /* Base64 */]])
-    ], LivroEditPage);
-    return LivroEditPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], NiveisPage);
+    return NiveisPage;
 }());
 
-//# sourceMappingURL=livro-edit.js.map
+//# sourceMappingURL=niveis.js.map
 
 /***/ }),
 
-/***/ 191:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 191;
-
-/***/ }),
-
-/***/ 235:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 235;
-
-/***/ }),
-
-/***/ 278:
+/***/ 151:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SetorPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shopList_shopList__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lista_livros_lista_livros__ = __webpack_require__(281);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var TabsPage = /** @class */ (function () {
-    function TabsPage() {
-        this.shopListPage = __WEBPACK_IMPORTED_MODULE_1__shopList_shopList__["a" /* ShopListPage */];
-        this.listaLivrosPage = __WEBPACK_IMPORTED_MODULE_2__lista_livros_lista_livros__["a" /* ListaLivrosPage */];
-    }
-    TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="shopListPage" tabIcon="basket" tabTitle="Lojas"></ion-tab>\n  <ion-tab [root]="listaLivrosPage" tabIcon="book" tabTitle="Livros"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\tabs\tabs.html"*/,
-        })
-    ], TabsPage);
-    return TabsPage;
-}());
-
-//# sourceMappingURL=tabs.js.map
-
-/***/ }),
-
-/***/ 279:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shopRegister_shopRegister__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shops__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_setor_cadastro_setor__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setor__ = __webpack_require__(81);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -317,92 +67,83 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ShopListPage = /** @class */ (function () {
-    function ShopListPage(modalCtrl, shopService) {
-        this.modalCtrl = modalCtrl;
-        this.shopService = shopService;
-    }
-    ShopListPage.prototype.addShop = function () {
-        var profileModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__shopRegister_shopRegister__["a" /* ShopRegisterPage */], { userId: 8675309 });
-        profileModal.present();
-        console.log(__WEBPACK_IMPORTED_MODULE_2__shopRegister_shopRegister__["a" /* ShopRegisterPage */]);
-    };
-    ShopListPage.prototype.ngOnInit = function () {
-        this.shops = this.shopService.getAllShops();
-    };
-    ShopListPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-shopList',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\shopList\shopList.html"*/'<ion-header>\n  <ion-navbar>\n\n        <ion-title>\n          Lista de lojas\n        </ion-title>\n\n        <ion-buttons hideWhen="android, core" end>\n          <button ion-button icon-only (click)="addShop()">\n            <ion-icon ios="ios-add" md="md-add"></ion-icon>\n          </button>\n        </ion-buttons>\n\n    </ion-navbar>\n</ion-header>\n\n\n\n<ion-content  padding class="contentMain">\n  <ion-searchbar\n    [(ngModel)]="myInput"\n    [showCancelButton]="shouldShowCancel"\n    (ionInput)="onInput($event)"\n    (ionCancel)="onCancel($event)">\n  </ion-searchbar>\n\n  <ion-list padding>\n    <ion-item *ngFor="let shop of shops">\n      <h2>{{shop.nome}}</h2>\n      <p>{{shop.site}}</p>\n      <button ion-button clear item-end>Ver</button>\n    </ion-item>\n  </ion-list>\n\n  <button padding showWhen="core" class="button-add-core centralized" ion-button (click)="addShop()">\n      Adicionar loja\n  </button>\n\n  <button showWhen="android" class="button-add-android"  ion-fab (click)="addShop()">\n      <ion-icon md="md-add"></ion-icon>\n  </button>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\shopList\shopList.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */], __WEBPACK_IMPORTED_MODULE_3__services_shops__["a" /* ShopService */]])
-    ], ShopListPage);
-    return ShopListPage;
-}());
-
-//# sourceMappingURL=shopList.js.map
-
-/***/ }),
-
-/***/ 280:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopRegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shops__ = __webpack_require__(153);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ShopRegisterPage = /** @class */ (function () {
-    function ShopRegisterPage(shopService, viewCtrl) {
-        this.shopService = shopService;
+/**
+ * Generated class for the SetorPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SetorPage = /** @class */ (function () {
+    function SetorPage(navCtrl, navParams, alertCtrl, setorService, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.setorService = setorService;
         this.viewCtrl = viewCtrl;
     }
-    ShopRegisterPage.prototype.dismiss = function () {
+    SetorPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SetorPage');
+    };
+    SetorPage.prototype.ngOnInit = function () {
+        this.setor = this.navParams.get('setor');
+    };
+    SetorPage.prototype.editarSetor = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__cadastro_setor_cadastro_setor__["a" /* CadastroSetorPage */], { setor: this.setor });
+    };
+    SetorPage.prototype.excluirSetor = function () {
+        var _this = this;
+        //Alert de confirmação
+        var confirm = this.alertCtrl.create({
+            title: 'Excluir Setor',
+            message: 'Ao excluir um setor todos seus dados e histórico de avaliações serão excluídos. Deseja Continuar?',
+            buttons: [
+                {
+                    text: 'Cancelar',
+                    handler: function () { }
+                },
+                {
+                    text: 'Excluir',
+                    handler: function () {
+                        _this.setorService.delete(_this.setor);
+                        _this.fecharPágina();
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    SetorPage.prototype.fecharPágina = function () {
         this.viewCtrl.dismiss();
     };
-    ShopRegisterPage.prototype.registerShop = function (values) {
-        console.log(values.shopName);
-        this.shopService.addShop({ id: this.shopService.getNextId(), nome: values.shopName, telefone: values.shopNumber, site: values.shopSite, endereco: values.shopAddress });
-        // let data = new Shop(f.value.shopName, f.value.shopNumber, f.value.shopSite, f.value.shopAddress);
-        //this.viewCtrl.dismiss(data);
-        console.log(this.shopService.getAllShops());
+    SetorPage.prototype.avaliarSetor = function () {
     };
-    ShopRegisterPage = __decorate([
+    SetorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-shopregister',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\shopRegister\shopRegister.html"*/'<ion-header>\n  <ion-navbar>\n\n\n        <ion-buttons left>\n          <button ion-button icon-only (click)="dismiss()">\n            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n          </button>\n        </ion-buttons>\n\n        <ion-title>\n          Cadastre uma loja\n        </ion-title>\n\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content class="contentMain">\n  <ion-card>\n    <ion-card-content>\n      <form (ngSubmit)="registerShop(f.value)" #f="ngForm">\n        <ion-row style="border-bottom: 1px solid #cccccc">\n          <ion-col>\n            <ion-list inset>\n\n              <ion-item>\n                <ion-input type="text" placeholder="Nome" name="shopName" ngModel required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-input type="number" placeholder="Número" name="shopNumber" ngModel required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-input type="text" placeholder="Website" name="shopSite" ngModel required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-input type="text" placeholder="Endereço" name="shopAddress" ngModel required></ion-input>\n              </ion-item>\n\n\n            </ion-list>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col class="signup-col">\n            <button ion-button class="submit-btn" full type="submit" [disabled]="!f.valid">Adicionar nova loja</button>\n          </ion-col>\n        </ion-row>\n\n    </form>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\shopRegister\shopRegister.html"*/
+            selector: 'page-setor',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setor\setor.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{setor.sigla}}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="editarSetor()">\n        <ion-icon name="create"></ion-icon>\n      </button>\n\n      <button ion-button icon-only (click)="excluirSetor()">\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card>\n\n\n    <ion-list>\n\n      <ion-item>\n        <p>Nome Completo</p>\n        <h2>{{setor.nome}}</h2>\n      </ion-item>\n\n     <ion-item *ngIf="setor.proReitoria">\n        <p>Pró-Reitoria de Vínculo</p>\n        <h2>{{setor.proReitoria}}</h2>\n      </ion-item>\n\n      <ion-item>\n        <p>Nível Atual</p>\n        <h2>{{setor.nivel? "Nível "+setor.nivel : "NA"}}</h2>\n      </ion-item>\n\n      <ion-item>\n        <p>Líder de Processos</p>\n        <h2>{{setor.lider? setor.lider : "Não especificado"}}</h2>\n      </ion-item>\n\n      <ion-item>\n        <p>Email do Líder</p>\n        <h2>{{setor.emailLider? setor.emailLider : "Não especificado"}}</h2>\n      </ion-item>\n\n      <ion-item>\n        <p>Última Avaliação</p>\n        <h2>{{setor.ultimaAvaliacao? setor.ultimaAvaliacao : "NA"}}</h2>\n      </ion-item>\n\n  </ion-list>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Histórico de Avaliações\n    </ion-card-header>\n\n    <ion-list>\n\n      <ion-item>\n        <h3>Nível 3</h3>\n        <p>29/07/2018</p>\n      </ion-item>\n\n      <ion-item>\n        <h3>Nível 2</h3>\n        <p>29/07/2017</p>\n      </ion-item>\n\n      <ion-item>\n        <h3>Nível 2</h3>\n        <p>29/05/2017</p>\n      </ion-item>\n\n    </ion-list>\n\n    <button ion-button clear small full>Ver Mais</button>\n\n  </ion-card>\n\n\n  <ion-fab bottom right>\n    <button ion-fab  hideWhen="browser" class="cor-danger" (click)="avaliarSetor()">\n      <ion-icon name="options"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setor\setor.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_shops__["a" /* ShopService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]])
-    ], ShopRegisterPage);
-    return ShopRegisterPage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_setor__["a" /* SetorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_setor__["a" /* SetorService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]) === "function" && _e || Object])
+    ], SetorPage);
+    return SetorPage;
+    var _a, _b, _c, _d, _e;
 }());
 
-//# sourceMappingURL=shopRegister.js.map
+//# sourceMappingURL=setor.js.map
 
 /***/ }),
 
-/***/ 281:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListaLivrosPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SetoresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__livro_livro__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__livro_register_livro_register__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__livro_edit_livro_edit__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_livros__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setor__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_setor_cadastro_setor__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setor_setor__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map__);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -427,118 +168,112 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var ListaLivrosPage = /** @class */ (function () {
-    function ListaLivrosPage(navCtrl, modalCtrl, livrosService, domSanitizationService, actionSheetCtrl) {
+/**
+ * Generated class for the SetoresPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SetoresPage = /** @class */ (function () {
+    function SetoresPage(navCtrl, navParams, setorService) {
         this.navCtrl = navCtrl;
-        this.modalCtrl = modalCtrl;
-        this.livrosService = livrosService;
-        this.domSanitizationService = domSanitizationService;
-        this.actionSheetCtrl = actionSheetCtrl;
-        this.CAPA_DEFAULT = "https://cor-cdn-static.bibliocommons.com/assets/default_covers/icon-book-93409e4decdf10c55296c91a97ac2653.png";
-        this.livros$ = this.livrosService
-            .getAllLivros() //DB LIST
+        this.navParams = navParams;
+        this.setorService = setorService;
+        this.setores$ = this.setorService
+            .getAll() //DB LIST
             .snapshotChanges() // KEY AND VALUE
-            .map(function (changes) {
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
             return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
-        });
+        }));
+        this.atualizaListaDeSetores();
     }
-    ListaLivrosPage.prototype.ngOnInit = function () {
+    SetoresPage.prototype.ionViewDidLoad = function () {
     };
-    ListaLivrosPage.prototype.onVerMais = function (livro) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__livro_livro__["a" /* LivroPage */], { livro: livro });
+    SetoresPage.prototype.addSetor = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__cadastro_setor_cadastro_setor__["a" /* CadastroSetorPage */]);
     };
-    ListaLivrosPage.prototype.deleteLivro = function (livro) {
-        this.livrosService.deleteLivro(livro);
+    SetoresPage.prototype.irParaPaginaDoSetor = function (setor) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__setor_setor__["a" /* SetorPage */], { setor: setor });
     };
-    ListaLivrosPage.prototype.addLivro = function () {
-        var profileModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__livro_register_livro_register__["a" /* LivroRegisterPage */], { userId: 8675309 });
-        profileModal.present();
-    };
-    ListaLivrosPage.prototype.editarLivro = function (livro) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__livro_edit_livro_edit__["a" /* LivroEditPage */], { livro: livro });
-    };
-    // filterItems(ev: any) {
-    //
-    //   function arrayUnique(array) {
-    //     var a = array.concat();
-    //     for(var i=0; i<a.length; ++i) {
-    //       for(var j=i+1; j<a.length; ++j) {
-    //         if(a[i] === a[j])
-    //           a.splice(j--, 1);
-    //       }
-    //     }
-    //     return a;
-    //   }
-    //
-    //   let livros: Livro[] = this.livros$.map;
-    //
-    //   let nomeLivro = ev.target.value;
-    //
-    //   if (nomeLivro && nomeLivro.trim() !== '') {
-    //     let filtradosPorAutor = this.livros.filter(function(item) {
-    //       return item.autor.toLowerCase().includes(nomeLivro.toLowerCase());
-    //     });
-    //     let filtradosPorTitulo = this.livros.filter(function(item) {
-    //       return item.titulo.toLowerCase().includes(nomeLivro.toLowerCase());
-    //     });
-    //
-    //     livros = arrayUnique(filtradosPorAutor.concat(filtradosPorTitulo));
-    //
-    //   }
-    // }
-    // filterItems(ev: any){}
-    ListaLivrosPage.prototype.onCancel = function (ev) {
-    };
-    ListaLivrosPage.prototype.sanitizeBase64 = function (capa) {
-        this.domSanitizationService.bypassSecurityTrustUrl(capa);
-    };
-    ListaLivrosPage.prototype.mostrarOpcoes = function (livro) {
-        var _this = this;
-        var actionSheet = this.actionSheetCtrl.create({
-            title: 'Opções',
-            buttons: [
-                {
-                    text: 'Excluir',
-                    role: 'destructive',
-                    handler: function () {
-                        _this.deleteLivro(livro);
-                    }
-                },
-                {
-                    text: 'Editar',
-                    handler: function () {
-                        _this.editarLivro(livro);
-                    }
-                },
-                {
-                    text: 'Cancelar',
-                    role: 'cancel'
-                }
-            ]
+    SetoresPage.prototype.filterItems = function (ev) {
+        this.setoresFiltrados$ = this.setores$.map(function (ARRAY) {
+            return ARRAY.filter(function (setor) {
+                return ((setor.sigla.toLowerCase().includes(ev.target.value.toLowerCase())) || (setor.nome.toLowerCase().includes(ev.target.value.toLowerCase())));
+            });
         });
-        actionSheet.present();
+        console.log(this.setores$);
     };
-    ListaLivrosPage.prototype.validaCapa = function (capa) {
-        if (!capa)
-            return this.CAPA_DEFAULT;
-        else
-            return capa;
+    SetoresPage.prototype.onCancel = function ($event) {
+        this.atualizaListaDeSetores();
     };
-    ListaLivrosPage = __decorate([
+    SetoresPage.prototype.atualizaListaDeSetores = function () {
+        this.setoresFiltrados$ = this.setores$;
+    };
+    SetoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-lista-livros',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\lista-livros\lista-livros.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton>\n    <ion-title>Lista de Livros</ion-title>\n\n    <ion-buttons hideWhen="android, core" end>\n      <button ion-button icon-only (click)="addLivro()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n<ion-toolbar>\n  <ion-searchbar\n    placeholder="Procurar"\n    [(ngModel)]="myInput"\n    [showCancelButton]="shouldShowCancel"\n    (ionInput)="filterItems($event)"\n    (ionCancel)="onCancel($event)">\n  </ion-searchbar>\n</ion-toolbar>\n\n\n</ion-header>\n\n\n<ion-content padding class="contentMain">\n\n  <ion-list>\n    <ion-item\n      *ngFor="let livro of livros$ | async">\n\n      <ion-thumbnail\n        item-start\n        (click)="onVerMais(livro)">\n        <img [src]="validaCapa(livro.capa)">\n      </ion-thumbnail>\n\n      <h2 (click)="onVerMais(livro)"> {{livro.titulo}}</h2>\n      <p (click)="onVerMais(livro)">{{livro.autor}}</p>\n\n      <button ion-button clear item-end icon-only (click)="mostrarOpcoes(livro)">\n        <ion-icon name="more"></ion-icon>\n      </button>\n\n    </ion-item>\n  </ion-list>\n\n\n  <button showWhen="core" class="button-add-core centralized" ion-button (click)="addLivro()">\n    Adicionar Livro\n  </button>\n\n  <button showWhen="android" class="button-add-android" ion-fab (click)="addLivro()">\n    <ion-icon name="add"></ion-icon>\n  </button>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\lista-livros\lista-livros.html"*/,
+            selector: 'page-setores',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setores\setores.html"*/'<!--\n  Generated template for the SetoresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Setores</ion-title>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons hideWhen="android, core" end>\n      <button ion-button icon-only (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <!--Barra de Pesquisa-->\n  <ion-toolbar>\n    <ion-searchbar\n      placeholder="Procurar"\n      [(ngModel)]="myInput"\n      [showCancelButton]="shouldShowCancel"\n      (ionInput)="filterItems($event)"\n      (ionCancel)="onCancel($event)">\n    </ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list class="browser-compat">\n    <ion-card\n      *ngFor="let setor of setoresFiltrados$ | async">\n\n      <ion-item (click)="irParaPaginaDoSetor(setor)">\n        <ion-avatar *ngIf="setor.nivel" icone-estrela item-end>\n          <img src="../assets/img/selo-nivel-5.png">\n        </ion-avatar>\n        <h2>{{setor.sigla}}</h2>\n        <p>{{setor.nome}}</p>\n      </ion-item>\n\n      <ion-card-content>\n        <ion-note>Última Avaliação: {{setor.ultimaAvaliacao}}</ion-note>\n      </ion-card-content>\n\n    </ion-card>\n  </ion-list>\n\n    <button padding showWhen="core" class="centralized" ion-button (click)="addSetor()">\n      Adicionar Setor\n    </button>\n\n  <ion-fab bottom right>\n    <button ion-fab showWhen="android" (click)="addSetor()">\n      <ion-icon name="add"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setores\setores.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_6__services_livros__["a" /* LivroServiceFirebase */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-    ], ListaLivrosPage);
-    return ListaLivrosPage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_setor__["a" /* SetorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_setor__["a" /* SetorService */]) === "function" && _c || Object])
+    ], SetoresPage);
+    return SetoresPage;
+    var _a, _b, _c;
 }());
 
-//# sourceMappingURL=lista-livros.js.map
+//# sourceMappingURL=setores.js.map
+
+/***/ }),
+
+/***/ 186:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 186;
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/cadastro-setor/cadastro-setor.module": [
+		473,
+		3
+	],
+	"../pages/niveis/niveis.module": [
+		474,
+		2
+	],
+	"../pages/setor/setor.module": [
+		475,
+		1
+	],
+	"../pages/setores/setores.module": [
+		476,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 227;
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
@@ -546,14 +281,10 @@ var ListaLivrosPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LivroPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__livro_edit_livro_edit__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_livros__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__setores_setores__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__niveis_niveis__ = __webpack_require__(150);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -566,329 +297,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
-var LivroPage = /** @class */ (function () {
-    function LivroPage(domSanitizationService, livrosService, navCtrl, navParams, file, inAppBrowser) {
-        this.domSanitizationService = domSanitizationService;
-        this.livrosService = livrosService;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.file = file;
-        this.inAppBrowser = inAppBrowser;
-        this.CAPA_DEFAULT = "https://cor-cdn-static.bibliocommons.com/assets/default_covers/icon-book-93409e4decdf10c55296c91a97ac2653.png";
+var TabsPage = /** @class */ (function () {
+    function TabsPage() {
+        this.setoresPage = __WEBPACK_IMPORTED_MODULE_1__setores_setores__["a" /* SetoresPage */];
+        this.niveisPage = __WEBPACK_IMPORTED_MODULE_2__niveis_niveis__["a" /* NiveisPage */];
     }
-    LivroPage.prototype.ionViewDidLoad = function () {
-        if (this.livro.pdf === "" || this.livro.pdf === null)
-            this.pdfAvailable = true;
-        else
-            this.pdfAvailable = false;
-        if (this.livro.capa === "" || this.livro.capa === null) {
-            this.livro.capa = this.CAPA_DEFAULT;
-        }
-    };
-    LivroPage.prototype.ngOnInit = function () {
-        this.livro = this.navParams.get('livro');
-    };
-    LivroPage.prototype.onVerPDF = function () {
-        this.inAppBrowser.create(this.livro.pdf, '_system');
-    };
-    LivroPage.prototype.deleteLivro = function (livro) {
-        this.livrosService.deleteLivro(livro);
-        this.navCtrl.pop();
-    };
-    LivroPage.prototype.editLivro = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__livro_edit_livro_edit__["a" /* LivroEditPage */], { livro: this.livro });
-    };
-    LivroPage.prototype.sanitizeBase64 = function (capa) {
-        this.domSanitizationService.bypassSecurityTrustUrl(capa);
-    };
-    LivroPage.prototype.validaCapa = function (capa) {
-        if (!capa)
-            return this.CAPA_DEFAULT;
-        else
-            return capa;
-    };
-    LivroPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-livro',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\livro\livro.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{livro.titulo}}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="editLivro()">\n        <ion-icon name="create"></ion-icon>\n      </button>\n    </ion-buttons>\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="contentMain">\n\n  <ion-row justify-content-center padding>\n    <img style="max-height: 200px; width:auto" [src]="validaCapa(livro.capa)"/>\n  </ion-row>\n\n\n  <ion-list>\n    <ion-item>Titulo <p>{{livro.titulo}}</p></ion-item>\n    <ion-item>Autor <p>{{livro.autor}}</p></ion-item>\n    <ion-item>Lançamento <p>{{livro.dtLancamento}}</p></ion-item>\n\n    <ion-row justify-content-between padding>\n\n      <button\n        (click)="deleteLivro(livro)"\n        ion-button\n        icon-left\n        color="danger">\n        <ion-icon name="trash"></ion-icon>\n        Excluir\n      </button>\n\n      <button\n        (click)="onVerPDF()"\n        [disabled] = "pdfAvailable"\n        ion-button\n        icon-only\n        icon-right\n      style="padding-left: 10px">\n        Ver PDF\n        <ion-icon name="document"></ion-icon>\n      </button>\n    </ion-row>\n  </ion-list>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\livro\livro.html"*/,
+    TabsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="setoresPage" tabTitle="Setores" tabIcon="home"></ion-tab>\n  <ion-tab [root]="niveisPage" tabTitle="Níveis" tabIcon="star"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\tabs\tabs.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
-            __WEBPACK_IMPORTED_MODULE_6__services_livros__["a" /* LivroServiceFirebase */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_file__["a" /* File */],
-            __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
-    ], LivroPage);
-    return LivroPage;
+        __metadata("design:paramtypes", [])
+    ], TabsPage);
+    return TabsPage;
 }());
 
-//# sourceMappingURL=livro.js.map
+//# sourceMappingURL=tabs.js.map
 
 /***/ }),
 
-/***/ 344:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LivroRegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_livros__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_chooser__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file_path__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_base64__ = __webpack_require__(177);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-var LivroRegisterPage = /** @class */ (function () {
-    function LivroRegisterPage(datePicker, camera, viewCtrl, livroService, fileChooser, filePath, base64) {
-        this.datePicker = datePicker;
-        this.camera = camera;
-        this.viewCtrl = viewCtrl;
-        this.livroService = livroService;
-        this.fileChooser = fileChooser;
-        this.filePath = filePath;
-        this.base64 = base64;
-        this.capaAtual = "";
-        this.CAPA_DEFAULT = "https://cor-cdn-static.bibliocommons.com/assets/default_covers/icon-book-93409e4decdf10c55296c91a97ac2653.png";
-        this.pdfAtual = "";
-    }
-    LivroRegisterPage.prototype.ngOnInit = function () {
-        this.btnPDFcolor = "danger";
-    };
-    LivroRegisterPage.prototype.registerLivro = function (livro) {
-        console.log(livro);
-        this.livroService.addLivro({ key: '', capa: this.capaAtual, titulo: livro.titulo, autor: livro.autor, dtLancamento: livro.dtLancamento, pdf: '' }, this.capaTemp, this.pdfTemp);
-        console.log(this.livroService.getAllLivros());
-        this.viewCtrl.dismiss();
-    };
-    LivroRegisterPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    LivroRegisterPage.prototype.showDatePicker = function () {
-        this.datePicker.show({
-            date: new Date(),
-            mode: 'date',
-            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-        }).then(function (date) { return console.log('Got date: ', date); }, function (err) { return console.log('Error occurred while getting date: ', err); });
-    };
-    LivroRegisterPage.prototype.onMudarCapaCamera = function () {
-        var _this = this;
-        var options = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
-        };
-        this.camera.getPicture(options).then(function (imageData) {
-            var base64Image = 'data:image/jpeg;base64,' + imageData;
-            var selectedPhoto = _this.dataURItoBlob(base64Image, false);
-            _this.capaAtual = base64Image;
-            _this.capaTemp = selectedPhoto;
-        }, function (err) {
-            // Handle error
-            console.log("erro ao capturar imagem");
-            console.log(err);
-        });
-    };
-    LivroRegisterPage.prototype.onMudarCapaGaleria = function () {
-        var _this = this;
-        var options = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-            saveToPhotoAlbum: false
-            // encodingType: this.camera.EncodingType.JPEG,
-            // mediaType: this.camera.MediaType.PICTURE
-        };
-        this.camera.getPicture(options).then(function (imageData) {
-            var base64Image = 'data:image/jpeg;base64,' + imageData;
-            var selectedPhoto = _this.dataURItoBlob(base64Image, false);
-            _this.capaAtual = base64Image;
-            _this.capaTemp = selectedPhoto;
-        }, function (err) {
-            // Handle error
-            console.log("erro ao capturar imagem");
-            console.log(err);
-        });
-    };
-    LivroRegisterPage.prototype.mudarImagemCapa = function (img64) {
-        this.capaAtual = img64;
-    };
-    LivroRegisterPage.prototype.onAdicionarPDF = function () {
-        var _this = this;
-        this.fileChooser.open()
-            .then(function (uri) {
-            console.log('Relative Path: ' + uri);
-            _this.filePath.resolveNativePath(uri).then(function (resolvedFilePath) {
-                _this.base64.encodeFile(resolvedFilePath).then(function (base64File) {
-                    _this.pdfTemp = _this.dataURItoBlob(base64File, true);
-                    _this.pdfAtual = 'data:application/pdf;base64,' + base64File;
-                }, function (err) {
-                    console.log(err);
-                });
-            });
-        })
-            .catch(function (e) { return console.log(e); });
-    };
-    LivroRegisterPage.prototype.validaCapa = function (capa) {
-        if (!capa)
-            return this.CAPA_DEFAULT;
-        else
-            return capa;
-    };
-    LivroRegisterPage.prototype.dataURItoBlob = function (dataURI, pdf) {
-        // code adapted from: http://stackoverflow.com/questions/33486352/cant-upload-image-to-aws-s3-from-ionic-camera
-        var binary = atob(dataURI.split(',')[1]);
-        var array = [];
-        for (var i = 0; i < binary.length; i++) {
-            array.push(binary.charCodeAt(i));
-        }
-        if (!pdf)
-            return new Blob([new Uint8Array(array)], { type: 'image/jpeg' });
-        else
-            return new Blob([new Uint8Array(array)], { type: 'application/pdf' });
-    };
-    ;
-    LivroRegisterPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-livro-register',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\livro-register\livro-register.html"*/'<ion-header>\n  <ion-navbar>\n\n\n    <ion-buttons left>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n\n    <ion-title>\n      Cadastre um Livro\n    </ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="contentMain">\n  <ion-card>\n    <ion-card-content>\n      <ion-row justify-content-center padding>\n        <img\n          style="max-height: 200px; width:auto"\n          [src]="validaCapa(this.capaAtual)"/>\n      </ion-row>\n      <ion-row justify-content-center>\n        <button\n\n          ion-button\n          (click)="onMudarCapaCamera()"\n          icon-only>\n          <ion-icon name="camera"></ion-icon>\n        </button>\n        <button\n          ion-button\n          (click)="onMudarCapaGaleria()"\n          icon-only>\n          <ion-icon name="image"></ion-icon>\n        </button>\n\n        <button\n          [outline]="pdfAtual === \'\'"\n          ion-button\n          (click)="onAdicionarPDF()"\n          icon-only\n          [color]="btnPDFcolor">\n          <ion-icon name="document"></ion-icon>\n        </button>\n\n      </ion-row>\n\n\n      <form (ngSubmit)="registerLivro(f.value)" #f="ngForm">\n        <ion-row style="border-bottom: 1px solid #cccccc">\n          <ion-col>\n            <ion-list inset>\n\n              <ion-item>\n                <ion-input type="text" placeholder="Título" name="titulo" ngModel required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-input type="text" placeholder="Autor" name="autor" ngModel required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label>Data de Lançamento</ion-label> <ion-datetime placeholder="02/02/2018" name="dtLancamento" displayFormat="DD/MM/YYYY" ngModel required></ion-datetime>\n              </ion-item>\n\n            </ion-list>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col class="signup-col">\n            <button ion-button class="submit-btn" full type="submit" [disabled]="!f.valid">Adicionar novo livro</button>\n          </ion-col>\n        </ion-row>\n\n      </form>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\livro-register\livro-register.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__ionic_native_date_picker__["a" /* DatePicker */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1__services_livros__["a" /* LivroServiceFirebase */],
-            __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_chooser__["a" /* FileChooser */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_file_path__["a" /* FilePath */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_base64__["a" /* Base64 */]])
-    ], LivroRegisterPage);
-    return LivroRegisterPage;
-}());
-
-//# sourceMappingURL=livro-register.js.map
-
-/***/ }),
-
-/***/ 367:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(374);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(404);
 
 
-
-window["$"] = __WEBPACK_IMPORTED_MODULE_2_jquery__;
-window["jQuery"] = __WEBPACK_IMPORTED_MODULE_2_jquery__;
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
 
-/***/ 374:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(413);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_chooser__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_date_picker__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_opener__ = __webpack_require__(529);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_image_picker__ = __webpack_require__(530);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_dialogs__ = __webpack_require__(531);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_document_viewer__ = __webpack_require__(532);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_file__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_file_path__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_base64__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_froala_editor_js_froala_editor_pkgd_min_js__ = __webpack_require__(533);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_froala_editor_js_froala_editor_pkgd_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_froala_editor_js_froala_editor_pkgd_min_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular_froala_wysiwyg__ = __webpack_require__(534);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_login_login__ = __webpack_require__(537);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_shopList_shopList__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_shopRegister_shopRegister__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_livro_livro__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_lista_livros_lista_livros__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_livros__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_tabs_tabs__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_shops__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_livro_register_livro_register__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_livro_edit_livro_edit__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_login_loginForm__ = __webpack_require__(538);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_angularfire2__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angularfire2_database__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__firebase_credentials__ = __webpack_require__(539);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_in_app_browser__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_angularfire2_storage__ = __webpack_require__(540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_setores_setores__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_niveis_niveis__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__firebase_credentials__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_setor__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_cadastro_setor_cadastro_setor__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_setor_setor__ = __webpack_require__(151);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-//BASIC IMPORTS
 
 
 
 
-//IONIC NATIVE IMPORTS
-
-
-
-
+// Ionic Imports
 
 
 
 
 
+//Imports Database
 
 
 
-//EXTERNAL IMPORTS
-
-
-//PAGE IMPORTS
-
-
-
-
-
-
-
-
-
-
-
-//DATABASE IMPORTS
-
-
+// Own Services
 
 
 
@@ -896,60 +376,42 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_28__pages_login_loginForm__["a" /* FormsPage */],
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_shopList_shopList__["a" /* ShopListPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_shopRegister_shopRegister__["a" /* ShopRegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_livro_livro__["a" /* LivroPage */],
-                __WEBPACK_IMPORTED_MODULE_26__pages_livro_register_livro_register__["a" /* LivroRegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_lista_livros_lista_livros__["a" /* ListaLivrosPage */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_27__pages_livro_edit_livro_edit__["a" /* LivroEditPage */]
+                __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_setores_setores__["a" /* SetoresPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_niveis_niveis__["a" /* NiveisPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_cadastro_setor_cadastro_setor__["a" /* CadastroSetorPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_setor_setor__["a" /* SetorPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_17_angular_froala_wysiwyg__["a" /* FroalaEditorModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_17_angular_froala_wysiwyg__["b" /* FroalaViewModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
-                    links: []
+                    links: [
+                        { loadChildren: '../pages/cadastro-setor/cadastro-setor.module#CadastroSetorPageModule', name: 'CadastroSetorPage', segment: 'cadastro-setor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/niveis/niveis.module#NiveisPageModule', name: 'NiveisPage', segment: 'niveis', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/setor/setor.module#SetorPageModule', name: 'SetorPage', segment: 'setor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/setores/setores.module#SetoresPageModule', name: 'SetoresPage', segment: 'setores', priority: 'low', defaultHistory: [] }
+                    ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_29_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_31__firebase_credentials__["a" /* FIREBASE_CONFIG */]),
-                __WEBPACK_IMPORTED_MODULE_30_angularfire2_database__["b" /* AngularFireDatabaseModule */],
-                __WEBPACK_IMPORTED_MODULE_33_angularfire2_storage__["a" /* AngularFireStorageModule */]
+                __WEBPACK_IMPORTED_MODULE_9_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_11__firebase_credentials__["a" /* FIREBASE_CONFIG */]),
+                __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["b" /* AngularFireDatabaseModule */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_28__pages_login_loginForm__["a" /* FormsPage */],
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_shopList_shopList__["a" /* ShopListPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_shopRegister_shopRegister__["a" /* ShopRegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_livro_livro__["a" /* LivroPage */],
-                __WEBPACK_IMPORTED_MODULE_26__pages_livro_register_livro_register__["a" /* LivroRegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_lista_livros_lista_livros__["a" /* ListaLivrosPage */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_27__pages_livro_edit_livro_edit__["a" /* LivroEditPage */]
+                __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_setores_setores__["a" /* SetoresPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_niveis_niveis__["a" /* NiveisPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_cadastro_setor_cadastro_setor__["a" /* CadastroSetorPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_setor_setor__["a" /* SetorPage */]
             ],
             providers: [
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */],
-                __WEBPACK_IMPORTED_MODULE_23__services_livros__["a" /* LivroServiceFirebase */],
-                __WEBPACK_IMPORTED_MODULE_25__services_shops__["a" /* ShopService */],
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_chooser__["a" /* FileChooser */],
-                __WEBPACK_IMPORTED_MODULE_6__ionic_native_date_picker__["a" /* DatePicker */],
-                __WEBPACK_IMPORTED_MODULE_8__ionic_native_image_picker__["a" /* ImagePicker */],
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_file__["a" /* File */],
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_document_viewer__["a" /* DocumentViewer */],
-                __WEBPACK_IMPORTED_MODULE_9__ionic_native_dialogs__["a" /* Dialogs */],
-                __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_7__ionic_native_file_opener__["a" /* FileOpener */],
-                __WEBPACK_IMPORTED_MODULE_14__ionic_native_file_path__["a" /* FilePath */],
-                __WEBPACK_IMPORTED_MODULE_32__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-                __WEBPACK_IMPORTED_MODULE_15__ionic_native_base64__["a" /* Base64 */]
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_12__services_setor__["a" /* SetorService */]
             ]
         })
     ], AppModule);
@@ -960,16 +422,16 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 413:
+/***/ 464:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(282);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -995,11 +457,9 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -1008,138 +468,31 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 422:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([
-    {
-        id: 1,
-        nome: 'Saraiva',
-        telefone: '5134511258',
-        site: 'saraiva.com.br',
-        endereco: "Rua saraiva, bairro saraiva nº123",
-    },
-    {
-        id: 2,
-        nome: 'Amazon',
-        telefone: '5134812245',
-        site: 'amazon.com.br',
-        endereco: "Rua amazon, bairro amazon nº452",
-    },
-    {
-        id: 3,
-        nome: 'Submarino',
-        telefone: '5136220147',
-        site: 'saraiva.com.br',
-        endereco: "Rua Submarino, bairro Submarino nº456",
-    }
-]);
-//# sourceMappingURL=shops.js.map
-
-/***/ }),
-
-/***/ 537:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\login\login.html"*/'<ion-content class="contentMain" padding>\n  <ion-row class="logo-row">\n    <ion-col></ion-col>\n    <ion-col class="imgCol" width-67>\n      <img src="../assets/imgs/bookLogo2.png"/>\n    </ion-col>\n    <ion-col></ion-col>\n  </ion-row>\n  <div class="loginBox">\n\n    <ion-card>\n      <ion-card-content>\n        <form (ngSubmit)="loginRegular(f)" #f="ngForm">\n          <ion-row style="border-bottom: 1px solid #cccccc">\n            <ion-col>\n              <ion-list inset>\n\n                <ion-item>\n                  <ion-input\n                    type="email"\n                    email\n                    [(ngModel)]="email"\n                    placeholder="Email"\n                    name="email"\n                    required></ion-input>\n                </ion-item>\n\n                <ion-item>\n                  <ion-input\n                    type="password"\n                    placeholder="Senha"\n                    name="password"\n                    ngModel\n                    required></ion-input>\n                </ion-item>\n\n              </ion-list>\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col class="signup-col">\n              <button\n                ion-button\n                class="submit-btn"\n                full\n                type="submit"\n                (click)="onLogin()"\n                [disabled]="!f.valid">Login</button>\n\n              <button\n                ion-button\n                class="register-btn"\n                block\n                clear>Criar nova conta</button>\n            </ion-col>\n          </ion-row>\n\n      </form>\n      </ion-card-content>\n    </ion-card>\n\n    <ion-row>\n      <ion-col  style="display:block; margin: 0 auto" class="signup-col" col-auto>\n        <p style="color:#ffffffbb"> Ou autentique-se com </p>\n        <div style="display:flex; justify-content: center;">\n          <button style="background-color: #ffffffbb; color:#333388ff" ion-button icon-only>\n            <ion-icon name="logo-facebook"></ion-icon>\n          </button>\n\n          <button style="background-color: #ffffffbb; color:#333388ff" ion-button round icon-only>\n            <ion-icon name="logo-google"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </div>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\TestProjectIonic-master\src\pages\login\login.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], LoginPage);
-    return LoginPage;
-}());
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 538:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var FormsPage = /** @class */ (function () {
-    function FormsPage() {
-        this.todo = {};
-    }
-    FormsPage.prototype.logForm = function () {
-        console.log(this.todo);
-    };
-    FormsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            template: "\n    <form (ngSubmit)=\"logForm()\">\n      <ion-item>\n        <ion-label>Email</ion-label>\n        <ion-input type=\"text\" [(ngModel)]=\"todo.title\" name=\"title\"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label>Senha</ion-label>\n        <ion-input type=\"password\" [(ngModel)]=\"todo.title\" name=\"title\"></ion-input>\n      </ion-item>\n      <button ion-button type=\"submit\" block>Entrar</button>\n    </form>\n  "
-        })
-    ], FormsPage);
-    return FormsPage;
-}());
-
-//# sourceMappingURL=loginForm.js.map
-
-/***/ }),
-
-/***/ 539:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FIREBASE_CONFIG; });
 var FIREBASE_CONFIG = {
-    //FIREBASE GLOBAL
-    // apiKey: "AIzaSyC1vD3B8VDTU33pau6XtbtoSxG1Nr8TXAQ",
-    // authDomain: "testappionic-93bec.firebaseapp.com",
-    // databaseURL: "https://testappionic-93bec.firebaseio.com",
-    // projectId: "testappionic-93bec",
-    // storageBucket: "testappionic-93bec.appspot.com",
-    // messagingSenderId: "335082067236"
-    //FIREBASE SOMENTE IONIC
-    apiKey: "AIzaSyAsvBnPlfvPyILEk2VotKX18lmzkg_GQ3s",
-    authDomain: "livrosionic.firebaseapp.com",
-    databaseURL: "https://livrosionic.firebaseio.com",
-    projectId: "livrosionic",
-    storageBucket: "livrosionic.appspot.com",
-    messagingSenderId: "88127481598"
+    apiKey: "AIzaSyCyARgZSkCnufQO11Pg-MSIaqZ0wz30ek0",
+    authDomain: "m3p-app.firebaseapp.com",
+    databaseURL: "https://m3p-app.firebaseio.com",
+    projectId: "m3p-app",
+    storageBucket: "",
+    messagingSenderId: "414887828407"
 };
 //# sourceMappingURL=firebase.credentials.js.map
 
 /***/ }),
 
-/***/ 67:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LivroServiceFirebase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SetorService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1152,71 +505,123 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LivroServiceFirebase = /** @class */ (function () {
-    function LivroServiceFirebase(db) {
+var SetorService = /** @class */ (function () {
+    function SetorService(db, toastCtrl) {
         this.db = db;
-        this.livroRef = this.db.list('livros');
+        this.toastCtrl = toastCtrl;
+        this.setoresRef = this.db.list('setores');
     }
-    LivroServiceFirebase.prototype.getLivro = function (id) {
-        var livro = this.db.database.ref('/' + id);
-        return livro;
+    SetorService.prototype.getAll = function () {
+        return this.setoresRef;
     };
-    LivroServiceFirebase.prototype.getAllLivros = function () {
-        return this.livroRef;
-    };
-    LivroServiceFirebase.prototype.addLivro = function (livro, capaTemp, pdfTemp) {
-        livro.key = this.livroRef.push(null).key;
-        console.log("ADICIONANDO - >" + livro.key);
-        this.livroRef.update('/' + livro.key, livro);
-        this.uploadToDB(capaTemp, livro.key, false);
-        this.uploadToDB(pdfTemp, livro.key, true);
-    };
-    LivroServiceFirebase.prototype.deleteLivro = function (livro) {
-        console.log("EXCLUINDO - >" + livro.key);
-        var updates = {};
-        updates['/livros/' + livro.key] = null;
-        this.db.database.ref().update(updates);
-    };
-    LivroServiceFirebase.prototype.atualizarLivro = function (livroEditado) {
-        console.log("EDITANDO - >" + livroEditado.key);
-        var updates = {};
-        updates['/livros/' + livroEditado.key] = livroEditado;
-        this.db.database.ref().update(updates);
-    };
-    LivroServiceFirebase.prototype.atualizarAtributo = function (atributo, keyLivro, novoValor) {
-        console.log("ATUALIZANDO ATRIBUTO " + atributo + " de - >" + keyLivro);
-        var updates = {};
-        updates['/livros/' + keyLivro + "/" + atributo] = novoValor;
-        this.db.database.ref().update(updates);
-    };
-    LivroServiceFirebase.prototype.uploadToDB = function (selectedFile, livroKey, pdf) {
-        if (selectedFile) {
-            var self_1 = this;
-            var uploadTask = void 0;
-            if (!pdf)
-                uploadTask = __WEBPACK_IMPORTED_MODULE_2_firebase__["storage"]().ref().child('/' + livroKey.toString() + '/image').put(selectedFile);
-            else
-                uploadTask = __WEBPACK_IMPORTED_MODULE_2_firebase__["storage"]().ref().child('/' + livroKey.toString() + '/pdf').put(selectedFile);
-            uploadTask.then(function (snapshot) {
-                if (!pdf)
-                    self_1.atualizarAtributo('capa', livroKey, snapshot.downloadURL);
-                else
-                    self_1.atualizarAtributo('pdf', livroKey, snapshot.downloadURL);
-            }, function () {
-                console.log("erro");
-            });
+    SetorService.prototype.save = function (setor) {
+        if (setor.key == null) {
+            console.log(setor.key);
+            setor.key = this.setoresRef.push(null).key;
+            this.setoresRef.update('/' + setor.key, setor);
+            this.mostrarToast('Setor ' + setor.sigla + ' adicionado');
+            console.log("FIREBASE: Setor Adicionado:");
+            console.log(setor);
+        }
+        else {
+            console.log(setor.key);
+            this.setoresRef.update('/' + setor.key, setor);
+            this.mostrarToast('Setor ' + setor.sigla + ' editado');
+            console.log("FIREBASE: Setor Editado:");
+            console.log(setor);
         }
     };
-    LivroServiceFirebase = __decorate([
+    SetorService.prototype.delete = function (setor) {
+        var updates = {};
+        updates['/setores/' + setor.key] = null;
+        this.db.database.ref().update(updates);
+        this.mostrarToast('Setor ' + setor.sigla + ' excluído');
+        console.log("FIREBASE: Setor Excluído:");
+        console.log(setor);
+    };
+    SetorService.prototype.mostrarToast = function (msg) {
+        var toast = this.toastCtrl.create({
+            message: msg,
+            duration: 3000
+        });
+        toast.present();
+    };
+    SetorService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
-    ], LivroServiceFirebase);
-    return LivroServiceFirebase;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ToastController */]])
+    ], SetorService);
+    return SetorService;
 }());
 
-//# sourceMappingURL=livros.js.map
+//# sourceMappingURL=setor.js.map
+
+/***/ }),
+
+/***/ 86:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroSetorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setor__ = __webpack_require__(81);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the CadastroSetorPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CadastroSetorPage = /** @class */ (function () {
+    function CadastroSetorPage(navCtrl, navParams, setoreService, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.setoreService = setoreService;
+        this.viewCtrl = viewCtrl;
+    }
+    CadastroSetorPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroSetorPage');
+    };
+    CadastroSetorPage.prototype.ngOnInit = function () {
+        this.setor = this.navParams.get('setor') ? this.navParams.get('setor') : {};
+        this.nomeBotaoSalvar = this.navParams.get('setor') ? 'Salvar Setor' : 'Adicionar Setor';
+        this.nomePagina = this.navParams.get('setor') ? 'Editar Setor' : 'Cadastrar Setor';
+    };
+    CadastroSetorPage.prototype.registrarSetor = function (setor) {
+        setor.key = this.setor.key;
+        this.setoreService.save(setor);
+        this.fecharPágina();
+    };
+    CadastroSetorPage.prototype.fecharPágina = function () {
+        this.viewCtrl.dismiss();
+    };
+    CadastroSetorPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cadastro-setor',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\cadastro-setor\cadastro-setor.html"*/'<!--\n  Generated template for the CadastroSetorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{nomePagina}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card padding class="browser-compat">\n    <ion-card-content>\n\n      <form (ngSubmit)="registrarSetor(f.value)" #f="ngForm">\n        <!--<ion-row>-->\n          <!--<ion-col>-->\n            <ion-list>\n\n              <ion-item>\n                <ion-label color="dark">Sigla</ion-label>\n                <ion-input type="text" name="sigla" [(ngModel)]="setor.sigla" required ></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Nome Completo</ion-label>\n                <ion-input type="text" name="nome" [(ngModel)]="setor.nome" required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Pró-Reitoria</ion-label>\n                <ion-input type="text" name="proReitoria" [(ngModel)]="setor.proReitoria"></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Líder de Processo</ion-label>\n                <ion-input type="text" name="lider" [(ngModel)]="setor.lider"></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Email do Líder</ion-label>\n                <ion-input type="text" name="emailLider" [(ngModel)]="setor.emailLider"></ion-input>\n              </ion-item>\n\n            </ion-list>\n\n            <button padding ion-button full clear type="submit" [disabled]="!f.valid">{{nomeBotaoSalvar}}</button>\n\n      </form>\n\n    </ion-card-content>\n  </ion-card>\n\n  </ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\cadastro-setor\cadastro-setor.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__services_setor__["a" /* SetorService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
+    ], CadastroSetorPage);
+    return CadastroSetorPage;
+}());
+
+//# sourceMappingURL=cadastro-setor.js.map
 
 /***/ })
 
-},[367]);
+},[283]);
 //# sourceMappingURL=main.js.map
