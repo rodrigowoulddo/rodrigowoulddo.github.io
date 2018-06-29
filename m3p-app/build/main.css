@@ -25694,6 +25694,26 @@ ion-navbar.toolbar {
   background: #FF8552;
 }
 
-page-setor .tituloSetor {
-  font-size: 18px;
+.cor-primary {
+  background: #476C9B;
+}
+
+.cor-secondary {
+  background: #cde9f4;
+}
+
+page-setor .nome-setor {
+  font-size: 100%;
+  white-space: normal;
+  font-weight: bold;
+  color: #476C9B;
+}
+
+page-setor .atributo-setor {
+  color: #476C9B;
+}
+
+page-setor .botao-nivel {
+  color: #f4f4f4;
+  background: #476C9B;
 }
