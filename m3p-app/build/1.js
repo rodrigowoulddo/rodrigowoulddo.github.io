@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 489:
+/***/ 487:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SetoresPageModule", function() { return SetoresPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PreAvaliacaoPageModule", function() { return PreAvaliacaoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__setores__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pre_avaliacao__ = __webpack_require__(156);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SetoresPageModule = /** @class */ (function () {
-    function SetoresPageModule() {
+var PreAvaliacaoPageModule = /** @class */ (function () {
+    function PreAvaliacaoPageModule() {
     }
-    SetoresPageModule = __decorate([
+    PreAvaliacaoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__setores__["a" /* SetoresPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pre_avaliacao__["a" /* PreAvaliacaoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__setores__["a" /* SetoresPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pre_avaliacao__["a" /* PreAvaliacaoPage */]),
             ],
         })
-    ], SetoresPageModule);
-    return SetoresPageModule;
+    ], PreAvaliacaoPageModule);
+    return PreAvaliacaoPageModule;
 }());
 
-//# sourceMappingURL=setores.module.js.map
+//# sourceMappingURL=pre-avaliacao.module.js.map
 
 /***/ })
 
