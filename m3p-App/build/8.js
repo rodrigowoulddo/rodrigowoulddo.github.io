@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 482:
+/***/ 487:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AvaliacaoCriteriosPageModule", function() { return AvaliacaoCriteriosPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AvaliacaoItensAnteriorPageModule", function() { return AvaliacaoItensAnteriorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__avaliacao_itens_anterior__ = __webpack_require__(155);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AvaliacaoCriteriosPageModule = /** @class */ (function () {
-    function AvaliacaoCriteriosPageModule() {
+var AvaliacaoItensAnteriorPageModule = /** @class */ (function () {
+    function AvaliacaoItensAnteriorPageModule() {
     }
-    AvaliacaoCriteriosPageModule = __decorate([
+    AvaliacaoItensAnteriorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios__["a" /* AvaliacaoCriteriosPage */],
+                __WEBPACK_IMPORTED_MODULE_2__avaliacao_itens_anterior__["a" /* AvaliacaoItensAnteriorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios__["a" /* AvaliacaoCriteriosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__avaliacao_itens_anterior__["a" /* AvaliacaoItensAnteriorPage */]),
             ],
         })
-    ], AvaliacaoCriteriosPageModule);
-    return AvaliacaoCriteriosPageModule;
+    ], AvaliacaoItensAnteriorPageModule);
+    return AvaliacaoItensAnteriorPageModule;
 }());
 
-//# sourceMappingURL=avaliacao-criterios.module.js.map
+//# sourceMappingURL=avaliacao-itens-anterior.module.js.map
 
 /***/ })
 

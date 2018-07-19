@@ -60522,6 +60522,10 @@ ion-navbar.toolbar {
   background: #cde9f4;
 }
 
+.icon-avaliacao-anterior {
+  font-size: 40px;
+}
+
 page-avaliacao-itens .label-avaliacao {
   font-size: 4em;
 }
