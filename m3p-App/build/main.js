@@ -396,129 +396,6 @@ var AvaliacaoItensPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreAvaliacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nivel__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_setor__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__avaliacao_avaliacao__ = __webpack_require__(88);
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the PreAvaliacaoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var PreAvaliacaoPage = /** @class */ (function () {
-    function PreAvaliacaoPage(navCtrl, navParams, nivelService, avaliacaoService, setorService, viewCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.nivelService = nivelService;
-        this.avaliacaoService = avaliacaoService;
-        this.setorService = setorService;
-        this.viewCtrl = viewCtrl;
-        this.botaoInicialDisabled = true;
-        //Debug
-        this.niveis$ = this.nivelService
-            .getAll() //DB LIST
-            .snapshotChanges() // KEY AND VALUE
-            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
-            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
-        }));
-    }
-    PreAvaliacaoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PreAvaliacaoPage');
-    };
-    PreAvaliacaoPage.prototype.ngOnInit = function () {
-        this.setor = this.navParams.get('setor');
-    };
-    PreAvaliacaoPage.prototype.iniciarAvaliacao = function () {
-        var avaliacao = {
-            setor: this.setor.key,
-            dataInicio: this.avaliacaoService.getDataAgora(),
-            nivelPretendido: this.nivelPretendido,
-            corpo: []
-        };
-        this.salvaNovaAvaliacao(avaliacao, this.insereNovaAvaliacao);
-    };
-    PreAvaliacaoPage.prototype.salvaNovaAvaliacao = function (avaliacao, insereNovaAvaliacao) {
-        var niveis;
-        niveis = [];
-        this.niveis$.forEach(function (nivel_array) {
-            nivel_array.forEach(function (nivel) {
-                niveis.push(nivel);
-            });
-        });
-        avaliacao.corpo = niveis;
-        insereNovaAvaliacao(avaliacao, this);
-        // this.avaliacaoService.getAvaliacaoMaisRecente(this.setor.key, this.abrirPaginaAvaliacao, this);
-        this.fecharPágina();
-    };
-    PreAvaliacaoPage.prototype.insereNovaAvaliacao = function (avaliacao, self) {
-        // self.avaliacaoService.save(avaliacao);
-        self.avaliacaoService.saveAndWait(avaliacao, self.abreAvaliacao, self);
-        self.setor.sendoAvaliado = true;
-        self.setorService.save(self.setor);
-    };
-    PreAvaliacaoPage.prototype.abreAvaliacao = function (self) {
-        self.avaliacaoService.getAvaliacaoMaisRecente(self.setor.key, self.abrirPaginaAvaliacao, self);
-    };
-    PreAvaliacaoPage.prototype.fecharPágina = function () {
-        this.viewCtrl.dismiss();
-    };
-    PreAvaliacaoPage.prototype.abrirPaginaAvaliacao = function (refAvaliacaoCorrente, self) {
-        self.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__avaliacao_avaliacao__["a" /* AvaliacaoPage */], {
-            setor: self.setor,
-            avaliacao: refAvaliacaoCorrente
-        });
-    };
-    PreAvaliacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pre-avaliacao',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\pre-avaliacao\pre-avaliacao.html"*/'<!--\n  Generated template for the PreAvaliacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nova Avaliação</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="browser-compat">\n\n  <ion-card>\n\n      <ion-card-header>\n        Nível Pretendido\n      </ion-card-header>\n\n    <ion-card-content>\n      <ion-list radio-group [(ngModel)]="nivelPretendido">\n\n        <ion-item *ngFor="let nivel of niveis$ | async; let i = index">\n\n          <ion-label>{{nivel.nome}}</ion-label>\n          <ion-radio value={{nivel.nome}} (ionSelect)="botaoInicialDisabled = false"></ion-radio>\n\n        </ion-item>\n\n      </ion-list>\n    </ion-card-content>\n\n  </ion-card>\n\n  <button ion-button round class="centralized" [disabled]="botaoInicialDisabled" (click)="iniciarAvaliacao()">Iniciar Valiação</button>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\pre-avaliacao\pre-avaliacao.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__services_nivel__["a" /* NivelService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__["a" /* AvaliacaoService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_setor__["a" /* SetorService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
-    ], PreAvaliacaoPage);
-    return PreAvaliacaoPage;
-}());
-
-//# sourceMappingURL=pre-avaliacao.js.map
-
-/***/ }),
-
-/***/ 159:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NiveisPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
@@ -549,7 +426,7 @@ var NiveisPage = /** @class */ (function () {
     };
     NiveisPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-niveis',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/'<!--\n  Generated template for the NiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Níveis</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="browser-compat" text-center>\n\n\n    <ion-img width="500" height="500" class="logo-m3p" src="http://nqi.ufcspa.edu.br/wiki/resources/logo-m3p.png"></ion-img>\n\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/,
+            selector: 'page-niveis',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/'<!--\n  Generated template for the NiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Níveis</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="browser-compat" text-center>\n\n\n    <ion-img width="250" height="250" class="logo-m3p" src="http://nqi.ufcspa.edu.br/wiki/resources/logo-m3p.png"></ion-img>\n\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], NiveisPage);
@@ -560,7 +437,7 @@ var NiveisPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 160:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -570,7 +447,7 @@ var NiveisPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_setor_cadastro_setor__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setor__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__avaliacao_avaliacao__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pre_avaliacao_pre_avaliacao__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pre_avaliacao_pre_avaliacao__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_avaliacao__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operators__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__avaliacao_anterior_avaliacao_anterior__ = __webpack_require__(153);
@@ -732,6 +609,129 @@ var SetorPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 160:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreAvaliacaoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nivel__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_setor__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__avaliacao_avaliacao__ = __webpack_require__(88);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the PreAvaliacaoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PreAvaliacaoPage = /** @class */ (function () {
+    function PreAvaliacaoPage(navCtrl, navParams, nivelService, avaliacaoService, setorService, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.nivelService = nivelService;
+        this.avaliacaoService = avaliacaoService;
+        this.setorService = setorService;
+        this.viewCtrl = viewCtrl;
+        this.botaoInicialDisabled = true;
+        //Debug
+        this.niveis$ = this.nivelService
+            .getAll() //DB LIST
+            .snapshotChanges() // KEY AND VALUE
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
+            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
+        }));
+    }
+    PreAvaliacaoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PreAvaliacaoPage');
+    };
+    PreAvaliacaoPage.prototype.ngOnInit = function () {
+        this.setor = this.navParams.get('setor');
+    };
+    PreAvaliacaoPage.prototype.iniciarAvaliacao = function () {
+        var avaliacao = {
+            setor: this.setor.key,
+            dataInicio: this.avaliacaoService.getDataAgora(),
+            nivelPretendido: this.nivelPretendido,
+            corpo: []
+        };
+        this.salvaNovaAvaliacao(avaliacao, this.insereNovaAvaliacao);
+    };
+    PreAvaliacaoPage.prototype.salvaNovaAvaliacao = function (avaliacao, insereNovaAvaliacao) {
+        var niveis;
+        niveis = [];
+        this.niveis$.forEach(function (nivel_array) {
+            nivel_array.forEach(function (nivel) {
+                niveis.push(nivel);
+            });
+        });
+        avaliacao.corpo = niveis;
+        insereNovaAvaliacao(avaliacao, this);
+        // this.avaliacaoService.getAvaliacaoMaisRecente(this.setor.key, this.abrirPaginaAvaliacao, this);
+        this.fecharPágina();
+    };
+    PreAvaliacaoPage.prototype.insereNovaAvaliacao = function (avaliacao, self) {
+        // self.avaliacaoService.save(avaliacao);
+        self.avaliacaoService.saveAndWait(avaliacao, self.abreAvaliacao, self);
+        self.setor.sendoAvaliado = true;
+        self.setorService.save(self.setor);
+    };
+    PreAvaliacaoPage.prototype.abreAvaliacao = function (self) {
+        self.avaliacaoService.getAvaliacaoMaisRecente(self.setor.key, self.abrirPaginaAvaliacao, self);
+    };
+    PreAvaliacaoPage.prototype.fecharPágina = function () {
+        this.viewCtrl.dismiss();
+    };
+    PreAvaliacaoPage.prototype.abrirPaginaAvaliacao = function (refAvaliacaoCorrente, self) {
+        self.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__avaliacao_avaliacao__["a" /* AvaliacaoPage */], {
+            setor: self.setor,
+            avaliacao: refAvaliacaoCorrente
+        });
+    };
+    PreAvaliacaoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-pre-avaliacao',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\pre-avaliacao\pre-avaliacao.html"*/'<!--\n  Generated template for the PreAvaliacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nova Avaliação</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="browser-compat">\n\n  <ion-card>\n\n      <ion-card-header>\n        Nível Pretendido\n      </ion-card-header>\n\n    <ion-card-content>\n      <ion-list radio-group [(ngModel)]="nivelPretendido">\n\n        <ion-item *ngFor="let nivel of niveis$ | async; let i = index">\n\n          <ion-label>{{nivel.nome}}</ion-label>\n          <ion-radio value={{nivel.nome}} (ionSelect)="botaoInicialDisabled = false"></ion-radio>\n\n        </ion-item>\n\n      </ion-list>\n    </ion-card-content>\n\n  </ion-card>\n\n  <button ion-button round class="centralized" [disabled]="botaoInicialDisabled" (click)="iniciarAvaliacao()">Iniciar Valiação</button>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\pre-avaliacao\pre-avaliacao.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__services_nivel__["a" /* NivelService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__["a" /* AvaliacaoService */],
+            __WEBPACK_IMPORTED_MODULE_5__services_setor__["a" /* SetorService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */]])
+    ], PreAvaliacaoPage);
+    return PreAvaliacaoPage;
+}());
+
+//# sourceMappingURL=pre-avaliacao.js.map
+
+/***/ }),
+
 /***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -742,7 +742,7 @@ var SetorPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setor__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_setor_cadastro_setor__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setor_setor__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setor_setor__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map__);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
@@ -887,19 +887,19 @@ var map = {
 		5
 	],
 	"../pages/niveis/niveis.module": [
-		494,
+		492,
 		4
 	],
 	"../pages/nivel/nivel.module": [
-		492,
+		493,
 		0
 	],
 	"../pages/pre-avaliacao/pre-avaliacao.module": [
-		493,
+		495,
 		3
 	],
 	"../pages/setor/setor.module": [
-		495,
+		494,
 		2
 	],
 	"../pages/setores/setores.module": [
@@ -1009,7 +1009,7 @@ var NivelService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__setores_setores__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__niveis_niveis__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__niveis_niveis__ = __webpack_require__(158);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1456,15 +1456,15 @@ var AvaliacaoService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(289);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_setores_setores__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_niveis_niveis__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_niveis_niveis__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_pipes__ = __webpack_require__(483);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2_database__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__firebase_credentials__ = __webpack_require__(484);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_setor__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_cadastro_setor_cadastro_setor__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_setor_setor__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_pre_avaliacao_pre_avaliacao__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_setor_setor__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_pre_avaliacao_pre_avaliacao__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_avaliacao_avaliacao__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_nivel__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_avaliacao__ = __webpack_require__(37);
@@ -1540,10 +1540,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/avaliacao-itens/avaliacao-itens.module#AvaliacaoItensPageModule', name: 'AvaliacaoItensPage', segment: 'avaliacao-itens', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao/avaliacao.module#AvaliacaoPageModule', name: 'AvaliacaoPage', segment: 'avaliacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-setor/cadastro-setor.module#CadastroSetorPageModule', name: 'CadastroSetorPage', segment: 'cadastro-setor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/nivel/nivel.module#NivelPageModule', name: 'NivelPage', segment: 'nivel', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/pre-avaliacao/pre-avaliacao.module#PreAvaliacaoPageModule', name: 'PreAvaliacaoPage', segment: 'pre-avaliacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/niveis/niveis.module#NiveisPageModule', name: 'NiveisPage', segment: 'niveis', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/nivel/nivel.module#NivelPageModule', name: 'NivelPage', segment: 'nivel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/setor/setor.module#SetorPageModule', name: 'SetorPage', segment: 'setor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/pre-avaliacao/pre-avaliacao.module#PreAvaliacaoPageModule', name: 'PreAvaliacaoPage', segment: 'pre-avaliacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/setores/setores.module#SetoresPageModule', name: 'SetoresPage', segment: 'setores', priority: 'low', defaultHistory: [] }
                     ]
                 }),
