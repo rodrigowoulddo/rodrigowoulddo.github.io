@@ -426,7 +426,7 @@ var NiveisPage = /** @class */ (function () {
     };
     NiveisPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-niveis',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/'<!--\n  Generated template for the NiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Níveis</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="browser-compat">\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/,
+            selector: 'page-niveis',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/'<!--\n  Generated template for the NiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Níveis</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div class="browser-compat" text-center>\n\n\n    <ion-img width="500" height="500" class="logo-m3p" src="../assets/imgs/logo.png"></ion-img>\n\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\niveis\niveis.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], NiveisPage);
@@ -823,7 +823,7 @@ var SetoresPage = /** @class */ (function () {
     };
     SetoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-setores',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setores\setores.html"*/'<!--\n  Generated template for the SetoresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Setores</ion-title>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons hideWhen="android, core" end>\n      <button ion-button icon-only (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <!--Barra de Pesquisa-->\n  <ion-toolbar>\n    <ion-searchbar\n      class="browser-compat"\n      placeholder="Procurar"\n      [(ngModel)]="myInput"\n      [showCancelButton]="shouldShowCancel"\n      (ionInput)="filterItems($event)"\n      (ionCancel)="onCancel()">\n    </ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div class="browser-compat">\n    <ion-list>\n      <ion-card\n        *ngFor="let setor of setoresFiltrados$ | async"\n      >\n\n        <ion-item (click)="irParaPaginaDoSetor(setor)">\n          <ion-avatar *ngIf="setor.nivel" icone-estrela item-end>\n            <img src={{getUrlImagemNivel(setor)}}>\n          </ion-avatar>\n          <h2>{{setor.sigla}}</h2>\n          <p>{{setor.nome}}</p>\n        </ion-item>\n\n        <ion-card-content>\n          <ion-note>{{setor.ultimaAvaliacao? \'Última Avaliação: \'+setor.ultimaAvaliacao : \'Setor ainda não avaliado\'}}</ion-note>\n        </ion-card-content>\n\n      </ion-card>\n    </ion-list>\n\n    <button padding showWhen="core" class="centralized" ion-button (click)="addSetor()">\n      Adicionar Setor\n    </button>\n\n    <ion-fab bottom right>\n      <button ion-fab showWhen="android" (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-fab>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setores\setores.html"*/,
+            selector: 'page-setores',template:/*ion-inline-start:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setores\setores.html"*/'<!--\n  Generated template for the SetoresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Setores</ion-title>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons hideWhen="android, core" end>\n      <button ion-button icon-only (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <!--Barra de Pesquisa-->\n  <ion-toolbar>\n    <ion-searchbar\n      class="browser-compat"\n      placeholder="Procurar"\n      [(ngModel)]="myInput"\n      [showCancelButton]="shouldShowCancel"\n      (ionInput)="filterItems($event)"\n      (ionCancel)="onCancel()">\n    </ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div class="browser-compat">\n    <ion-list>\n      <ion-card\n        *ngFor="let setor of setoresFiltrados$ | async"\n      >\n\n        <ion-item (click)="irParaPaginaDoSetor(setor)">\n          <ion-avatar *ngIf="setor.nivel" icone-estrela item-end>\n            <img src={{getUrlImagemNivel(setor)}}>\n          </ion-avatar>\n          <h2>{{setor.sigla}}</h2>\n          <p>{{setor.nome}}</p>\n        </ion-item>\n\n        <ion-card-content>\n          <ion-note *ngIf="!setor.sendoAvaliado">{{setor.ultimaAvaliacao? \'Última Avaliação: \'+setor.ultimaAvaliacao : \'Setor ainda não avaliado\'}}</ion-note>\n          <ion-note *ngIf="setor.sendoAvaliado" color="danger">Avaliação em andamento</ion-note>\n        </ion-card-content>\n\n      </ion-card>\n    </ion-list>\n\n    <button padding showWhen="core" class="centralized" ion-button (click)="addSetor()">\n      Adicionar Setor\n    </button>\n\n    <ion-fab bottom right>\n      <button ion-fab showWhen="android" (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-fab>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\rodrigofg\Documents\Projetos\m3p-appv1\src\pages\setores\setores.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -867,11 +867,11 @@ var map = {
 		10
 	],
 	"../pages/avaliacao-criterios/avaliacao-criterios.module": [
-		488,
+		487,
 		9
 	],
 	"../pages/avaliacao-itens-anterior/avaliacao-itens-anterior.module": [
-		487,
+		488,
 		8
 	],
 	"../pages/avaliacao-itens/avaliacao-itens.module": [
@@ -1434,10 +1434,9 @@ var AvaliacaoService = /** @class */ (function () {
     };
     AvaliacaoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
     ], AvaliacaoService);
     return AvaliacaoService;
-    var _a;
 }());
 
 //# sourceMappingURL=avaliacao.js.map
@@ -1536,8 +1535,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/avaliacao-anterior/avaliacao-anterior.module#AvaliacaoAnteriorPageModule', name: 'AvaliacaoAnteriorPage', segment: 'avaliacao-anterior', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao-criterios-anterior/avaliacao-criterios-anterior.module#AvaliacaoCriteriosAnteriorPageModule', name: 'AvaliacaoCriteriosAnteriorPage', segment: 'avaliacao-criterios-anterior', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/avaliacao-itens-anterior/avaliacao-itens-anterior.module#AvaliacaoItensAnteriorPageModule', name: 'AvaliacaoItensAnteriorPage', segment: 'avaliacao-itens-anterior', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao-criterios/avaliacao-criterios.module#AvaliacaoCriteriosPageModule', name: 'AvaliacaoCriteriosPage', segment: 'avaliacao-criterios', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/avaliacao-itens-anterior/avaliacao-itens-anterior.module#AvaliacaoItensAnteriorPageModule', name: 'AvaliacaoItensAnteriorPage', segment: 'avaliacao-itens-anterior', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao-itens/avaliacao-itens.module#AvaliacaoItensPageModule', name: 'AvaliacaoItensPage', segment: 'avaliacao-itens', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao/avaliacao.module#AvaliacaoPageModule', name: 'AvaliacaoPage', segment: 'avaliacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-setor/cadastro-setor.module#CadastroSetorPageModule', name: 'CadastroSetorPage', segment: 'cadastro-setor', priority: 'low', defaultHistory: [] },
