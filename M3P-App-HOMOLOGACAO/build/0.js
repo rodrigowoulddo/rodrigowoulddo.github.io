@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 534:
+/***/ 532:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,7 +72,7 @@ var NivelPage = /** @class */ (function () {
     };
     NivelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-nivel',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\nivel\nivel.html"*/'<!--\n  Generated template for the NivelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>nivel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\nivel\nivel.html"*/,
+            selector: 'page-nivel',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/nivel/nivel.html"*/'<!--\n  Generated template for the NivelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>nivel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/nivel/nivel.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], NivelPage);

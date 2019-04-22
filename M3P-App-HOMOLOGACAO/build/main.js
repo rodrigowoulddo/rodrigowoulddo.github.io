@@ -4,6 +4,43 @@ webpackJsonp([15],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__setores_setores__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edicao_niveis_edicao_niveis__ = __webpack_require__(175);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TabsPage = /** @class */ (function () {
+    function TabsPage() {
+        this.setoresPage = __WEBPACK_IMPORTED_MODULE_1__setores_setores__["a" /* SetoresPage */];
+        this.niveisPage = __WEBPACK_IMPORTED_MODULE_2__edicao_niveis_edicao_niveis__["a" /* EdicaoNiveisPage */];
+    }
+    TabsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="setoresPage" tabTitle="Setores" tabIcon="home"></ion-tab>\n  <ion-tab [root]="niveisPage" tabTitle="Níveis" tabIcon="star"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/tabs/tabs.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], TabsPage);
+    return TabsPage;
+}());
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
+/***/ 140:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NivelService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(70);
@@ -102,43 +139,6 @@ var NivelService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 140:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__setores_setores__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edicao_niveis_edicao_niveis__ = __webpack_require__(171);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TabsPage = /** @class */ (function () {
-    function TabsPage() {
-        this.setoresPage = __WEBPACK_IMPORTED_MODULE_1__setores_setores__["a" /* SetoresPage */];
-        this.niveisPage = __WEBPACK_IMPORTED_MODULE_2__edicao_niveis_edicao_niveis__["a" /* EdicaoNiveisPage */];
-    }
-    TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="setoresPage" tabTitle="Setores" tabIcon="home"></ion-tab>\n  <ion-tab [root]="niveisPage" tabTitle="Níveis" tabIcon="star"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\tabs\tabs.html"*/
-        }),
-        __metadata("design:paramtypes", [])
-    ], TabsPage);
-    return TabsPage;
-}());
-
-//# sourceMappingURL=tabs.js.map
-
-/***/ }),
-
 /***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -191,7 +191,7 @@ var AvaliacaoAnteriorPage = /** @class */ (function () {
     };
     AvaliacaoAnteriorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-avaliacao-anterior',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-anterior\avaliacao-anterior.html"*/'<!--\n  Generated template for the AvaliacaoAnteriorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{setor.sigla}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n    <ion-card>\n      <ion-row>\n        <ion-col text-center>\n          <ion-card-header><h1 text-center>{{setor?.sigla}}</h1></ion-card-header>\n          <ion-img style="width: 60px; height: 60px; border-radius: 50%;" src={{getUrlImagemNivel(avaliacao.nivelAtingido)}}></ion-img>\n          <div margin-top="10"></div>\n        </ion-col>\n        <ion-col>\n          <div margin-top="10"></div>\n          <h6 ion-text  stacked color="primary">Pretendido:</h6><h2>{{avaliacao?.nivelPretendido}}</h2>\n          <div margin-top="10"></div>\n          <h6 ion-text  stacked color="primary">Atingido: </h6><h2>{{avaliacao?.nivelAtingido}}</h2>\n          <div margin-top="10"></div>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n    <!--TODO VERIFICAR NOMENCLATURA DE INÍCIO E FIM-->\n\n    <ion-card>\n      <ion-row padding margin-right="10" margin-left="5">\n        <ion-col>\n          <h6 ion-text  stacked color="primary">Início regular:</h6><p>{{avaliacao?.dataInicio}}</p>\n        </ion-col>\n        <ion-col>\n          <h6 ion-text  stacked color="primary">Fim regular:</h6><p>{{avaliacao?.dataFim}}</p>\n        </ion-col>\n      </ion-row>\n\n      <ion-row padding margin-right="10" margin-left="5" *ngIf="avaliacao.dataInicioAvaliacaoComplementar">\n        <ion-col *ngIf="avaliacao.dataInicioAvaliacaoComplementar">\n          <h6 ion-text  stacked color="primary">Início complementar:</h6><p>{{avaliacao?.dataInicioAvaliacaoComplementar}}</p>\n        </ion-col>\n        <ion-col *ngIf="avaliacao.dataFimAvaliacaoComplementar">\n          <h6 ion-text  stacked color="primary">Fim complementar:</h6><p>{{avaliacao?.dataFimAvaliacaoComplementar}}</p>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n    <ion-card>\n      <ion-list>\n\n        <button *ngFor="let nivel of corpo" ion-item  (click)="abrirCriterios(nivel)">\n          {{nivel.nome}}\n\n          <ion-icon *ngIf="!(avaliacaoService.newGetCorNivel(nivel) === \'avaliacaoManual\')"    item-end [color]="avaliacaoService.newGetCorNivel(nivel)" name={{avaliacaoService.ICON_ESTRELA}}></ion-icon>\n          <ion-icon *ngIf="(avaliacaoService.newGetCorNivel(nivel) === \'avaliacaoManual\')"       item-end color="avaliacaoAmarelo" name={{avaliacaoService.ICON_AVALIACAO_MANUAL}}></ion-icon>\n\n        </button>\n\n      </ion-list>\n    </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-anterior\avaliacao-anterior.html"*/,
+            selector: 'page-avaliacao-anterior',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-anterior/avaliacao-anterior.html"*/'<!--\n  Generated template for the AvaliacaoAnteriorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{setor.sigla}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n    <ion-card>\n      <ion-row>\n        <ion-col text-center>\n          <ion-card-header><h1 text-center>{{setor?.sigla}}</h1></ion-card-header>\n          <ion-img style="width: 60px; height: 60px; border-radius: 50%;" src={{getUrlImagemNivel(avaliacao.nivelAtingido)}}></ion-img>\n          <div margin-top="10"></div>\n        </ion-col>\n        <ion-col>\n          <div margin-top="10"></div>\n          <h6 ion-text  stacked color="primary">Pretendido:</h6><h2>{{avaliacao?.nivelPretendido}}</h2>\n          <div margin-top="10"></div>\n          <h6 ion-text  stacked color="primary">Atingido: </h6><h2>{{avaliacao?.nivelAtingido}}</h2>\n          <div margin-top="10"></div>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n    <!--TODO VERIFICAR NOMENCLATURA DE INÍCIO E FIM-->\n\n    <ion-card>\n      <ion-row padding margin-right="10" margin-left="5">\n        <ion-col>\n          <h6 ion-text  stacked color="primary">Início regular:</h6><p>{{avaliacao?.dataInicio}}</p>\n        </ion-col>\n        <ion-col>\n          <h6 ion-text  stacked color="primary">Fim regular:</h6><p>{{avaliacao?.dataFim}}</p>\n        </ion-col>\n      </ion-row>\n\n      <ion-row padding margin-right="10" margin-left="5" *ngIf="avaliacao.dataInicioAvaliacaoComplementar">\n        <ion-col *ngIf="avaliacao.dataInicioAvaliacaoComplementar">\n          <h6 ion-text  stacked color="primary">Início complementar:</h6><p>{{avaliacao?.dataInicioAvaliacaoComplementar}}</p>\n        </ion-col>\n        <ion-col *ngIf="avaliacao.dataFimAvaliacaoComplementar">\n          <h6 ion-text  stacked color="primary">Fim complementar:</h6><p>{{avaliacao?.dataFimAvaliacaoComplementar}}</p>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n\n    <ion-card>\n      <ion-list>\n\n        <button *ngFor="let nivel of corpo" ion-item  (click)="abrirCriterios(nivel)">\n          {{nivel.nome}}\n\n          <ion-icon *ngIf="!(avaliacaoService.newGetCorNivel(nivel) === \'avaliacaoManual\')"    item-end [color]="avaliacaoService.newGetCorNivel(nivel)" name={{avaliacaoService.ICON_ESTRELA}}></ion-icon>\n          <ion-icon *ngIf="(avaliacaoService.newGetCorNivel(nivel) === \'avaliacaoManual\')"       item-end color="avaliacaoAmarelo" name={{avaliacaoService.ICON_AVALIACAO_MANUAL}}></ion-icon>\n\n        </button>\n\n      </ion-list>\n    </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-anterior/avaliacao-anterior.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_avaliacao__["a" /* AvaliacaoService */]])
     ], AvaliacaoAnteriorPage);
@@ -246,7 +246,7 @@ var AvaliacaoCriteriosAnteriorPage = /** @class */ (function () {
     };
     AvaliacaoCriteriosAnteriorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-avaliacao-criterios-anterior',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-criterios-anterior\avaliacao-criterios-anterior.html"*/'<!--\n  Generated template for the AvaliacaoCriteriosAnteriorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{nivel?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat">\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="nivel.avaliacaoManual">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Nível</h2>\n        <ion-note text-wrap text-center>Avaliado por: {{nivel.usuarioAvaliacaoManual}}</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <ion-col>\n            <ion-icon *ngIf="nivel.avaliacaoManual == \'vermelho\'" class="icon-avaliacao-anterior" name="close-circle"\n                      [color]="nivel.avaliacaoManual == \'vermelho\'? \'avaliacaoVermelho\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="nivel.avaliacaoManual == \'amarelo\'" class="icon-avaliacao-anterior" name="help-circle"\n                      [color]="nivel.avaliacaoManual == \'amarelo\'? \'avaliacaoAmarelo\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n        </div>\n\n      </ion-card-content>\n    </ion-card>\n    <ion-card *ngFor="let criterio of nivel.criterios">\n\n      <!--<ion-card-header>-->\n      <ion-item margin-left="45" padding-right="30" (click)="abrirItensDeAvaliacao(criterio)">\n        <ion-card-title>{{criterio.nome}}</ion-card-title>\n        <ion-icon\n          *ngIf="!(avaliacaoService.newGetCorCriterio(criterio) === \'avaliacaoManual\')"\n          item-end [color]="avaliacaoService.newGetCorCriterio(criterio)" name={{avaliacaoService.ICON_ESTRELA}}></ion-icon>\n        <ion-icon\n          *ngIf="(avaliacaoService.newGetCorCriterio(criterio) === \'avaliacaoManual\')"\n          item-end color="avaliacaoAmarelo" name={{avaliacaoService.ICON_AVALIACAO_MANUAL}}></ion-icon>\n      </ion-item>\n      <!--</ion-card-header>-->\n\n      <ion-card-content (click)="abrirItensDeAvaliacao(criterio)">\n        <p margin-left="25" margin-right="20">{{criterio.descricao}}</p>\n      </ion-card-content>\n    </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-criterios-anterior\avaliacao-criterios-anterior.html"*/,
+            selector: 'page-avaliacao-criterios-anterior',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-criterios-anterior/avaliacao-criterios-anterior.html"*/'<!--\n  Generated template for the AvaliacaoCriteriosAnteriorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{nivel?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat">\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="nivel.avaliacaoManual">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Nível</h2>\n        <ion-note text-wrap text-center>Avaliado por: {{nivel.usuarioAvaliacaoManual}}</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <ion-col>\n            <ion-icon *ngIf="nivel.avaliacaoManual == \'vermelho\'" class="icon-avaliacao-anterior" name="close-circle"\n                      [color]="nivel.avaliacaoManual == \'vermelho\'? \'avaliacaoVermelho\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="nivel.avaliacaoManual == \'amarelo\'" class="icon-avaliacao-anterior" name="help-circle"\n                      [color]="nivel.avaliacaoManual == \'amarelo\'? \'avaliacaoAmarelo\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n        </div>\n\n      </ion-card-content>\n    </ion-card>\n    <ion-card *ngFor="let criterio of nivel.criterios">\n\n      <!--<ion-card-header>-->\n      <ion-item margin-left="45" padding-right="30" (click)="abrirItensDeAvaliacao(criterio)">\n        <ion-card-title>{{criterio.nome}}</ion-card-title>\n        <ion-icon\n          *ngIf="!(avaliacaoService.newGetCorCriterio(criterio) === \'avaliacaoManual\')"\n          item-end [color]="avaliacaoService.newGetCorCriterio(criterio)" name={{avaliacaoService.ICON_ESTRELA}}></ion-icon>\n        <ion-icon\n          *ngIf="(avaliacaoService.newGetCorCriterio(criterio) === \'avaliacaoManual\')"\n          item-end color="avaliacaoAmarelo" name={{avaliacaoService.ICON_AVALIACAO_MANUAL}}></ion-icon>\n      </ion-item>\n      <!--</ion-card-header>-->\n\n      <ion-card-content (click)="abrirItensDeAvaliacao(criterio)">\n        <p margin-left="25" margin-right="20">{{criterio.descricao}}</p>\n      </ion-card-content>\n    </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-criterios-anterior/avaliacao-criterios-anterior.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_avaliacao__["a" /* AvaliacaoService */]])
     ], AvaliacaoCriteriosAnteriorPage);
@@ -303,7 +303,7 @@ var AvaliacaoItensAnteriorPage = /** @class */ (function () {
     };
     AvaliacaoItensAnteriorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-avaliacao-itens-anterior',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-itens-anterior\avaliacao-itens-anterior.html"*/'<!--\n  Generated template for the AvaliacaoItensAnteriorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{criterio?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="criterio.avaliacaoManual">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Critério</h2>\n        <ion-note text-wrap>Avaliado por: {{criterio.usuarioAvaliacaoManual}}</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <ion-col>\n            <ion-icon *ngIf="criterio.avaliacaoManual == \'vermelho\'" class="icon-avaliacao-anterior" name="close-circle"\n                      [color]="criterio.avaliacaoManual == \'vermelho\'? \'avaliacaoVermelho\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="criterio.avaliacaoManual == \'amarelo\'" class="icon-avaliacao-anterior" name="help-circle"\n                      [color]="criterio.avaliacaoManual == \'amarelo\'? \'avaliacaoAmarelo\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n        </div>\n\n      </ion-card-content>\n    </ion-card>\n    <ion-card *ngFor="let item of criterio.itensDeAvaliacao; let i = index">\n\n      <ion-card-header>\n\n        <ion-row float-right>\n          <ion-col>\n            <ion-icon *ngIf="item.avaliacao == \'vermelho\'" color="avaliacaoVermelho" name="close-circle"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="item.avaliacao == \'amarelo\'" color="avaliacaoAmarelo" name="help-circle"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="item.avaliacao == \'verde\'" color="avaliacaoVerde" name="checkmark-circle"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="!item.avaliacao" color="avaliacaoCinza" name="ios-close-circle-outline"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n        </ion-row>\n\n        <ion-card-title>Item {{i+1}}</ion-card-title>\n\n        <ion-label text-wrap margin-top="10"><p>{{item.descricao}}</p></ion-label>\n\n\n\n        <ion-item no-lines *ngIf="item.observacao">\n          <h6 ion-text color="primary" stacked>Observação</h6>\n          <ion-note class="text-selectable" text-wrap>{{item.observacao}}</ion-note>\n        </ion-item>\n\n        <ion-row float-right *ngIf="item.usuarioAvaliacao">\n            <ion-icon\n              color="primary"\n              style=" width: 30px; height: 30px"\n              (click)="alterarAvaliadoresVisiveis(i)">\n              <ion-icon\n                [name]="avaliadoresVisiveis[i]? \'ios-contacts-outline\' : \'ios-contacts\'">\n              </ion-icon>\n            </ion-icon>\n        </ion-row>\n\n        <ion-row padding *ngIf="avaliadoresVisiveis[i]">\n          <ion-col *ngIf="item.usuarioAvaliacao">\n            <ion-note>Avaliado por:<br>{{item.usuarioAvaliacao}}</ion-note>\n          </ion-col>\n          <ion-col *ngIf="item.usuarioObservacao && item.observacao">\n            <ion-note>Observação por:<br>{{item.usuarioObservacao}}</ion-note>\n          </ion-col>\n        </ion-row>\n\n      </ion-card-header>\n\n    </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-itens-anterior\avaliacao-itens-anterior.html"*/,
+            selector: 'page-avaliacao-itens-anterior',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-itens-anterior/avaliacao-itens-anterior.html"*/'<!--\n  Generated template for the AvaliacaoItensAnteriorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{criterio?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="criterio.avaliacaoManual">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Critério</h2>\n        <ion-note text-wrap>Avaliado por: {{criterio.usuarioAvaliacaoManual}}</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <ion-col>\n            <ion-icon *ngIf="criterio.avaliacaoManual == \'vermelho\'" class="icon-avaliacao-anterior" name="close-circle"\n                      [color]="criterio.avaliacaoManual == \'vermelho\'? \'avaliacaoVermelho\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="criterio.avaliacaoManual == \'amarelo\'" class="icon-avaliacao-anterior" name="help-circle"\n                      [color]="criterio.avaliacaoManual == \'amarelo\'? \'avaliacaoAmarelo\': \'avaliacaoCinza\'"></ion-icon>\n          </ion-col>\n        </div>\n\n      </ion-card-content>\n    </ion-card>\n    <ion-card *ngFor="let item of criterio.itensDeAvaliacao; let i = index">\n\n      <ion-card-header>\n\n        <ion-row float-right>\n          <ion-col>\n            <ion-icon *ngIf="item.avaliacao == \'vermelho\'" color="avaliacaoVermelho" name="close-circle"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="item.avaliacao == \'amarelo\'" color="avaliacaoAmarelo" name="help-circle"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="item.avaliacao == \'verde\'" color="avaliacaoVerde" name="checkmark-circle"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n          <ion-col>\n            <ion-icon *ngIf="!item.avaliacao" color="avaliacaoCinza" name="ios-close-circle-outline"\n                      class="icon-avaliacao-anterior"></ion-icon>\n          </ion-col>\n        </ion-row>\n\n        <ion-card-title>Item {{i+1}}</ion-card-title>\n\n        <ion-label text-wrap margin-top="10"><p>{{item.descricao}}</p></ion-label>\n\n\n\n        <ion-item no-lines *ngIf="item.observacao">\n          <h6 ion-text color="primary" stacked>Observação</h6>\n          <ion-note class="text-selectable" text-wrap>{{item.observacao}}</ion-note>\n        </ion-item>\n\n        <ion-row float-right *ngIf="item.usuarioAvaliacao">\n            <ion-icon\n              color="primary"\n              style=" width: 30px; height: 30px"\n              (click)="alterarAvaliadoresVisiveis(i)">\n              <ion-icon\n                [name]="avaliadoresVisiveis[i]? \'ios-contacts-outline\' : \'ios-contacts\'">\n              </ion-icon>\n            </ion-icon>\n        </ion-row>\n\n        <ion-row padding *ngIf="avaliadoresVisiveis[i]">\n          <ion-col *ngIf="item.usuarioAvaliacao">\n            <ion-note>Avaliado por:<br>{{item.usuarioAvaliacao}}</ion-note>\n          </ion-col>\n          <ion-col *ngIf="item.usuarioObservacao && item.observacao">\n            <ion-note>Observação por:<br>{{item.usuarioObservacao}}</ion-note>\n          </ion-col>\n        </ion-row>\n\n      </ion-card-header>\n\n    </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-itens-anterior/avaliacao-itens-anterior.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_avaliacao__["a" /* AvaliacaoService */]])
     ], AvaliacaoItensAnteriorPage);
@@ -403,7 +403,7 @@ var AvaliacaoCriteriosPage = /** @class */ (function () {
     };
     AvaliacaoCriteriosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-avaliacao-criterios',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-criterios\avaliacao-criterios.html"*/'<!--\n  Generated template for the AvaliacaoCriteriosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{nivel?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="avaliacaoService.newMostrarCardAvaliacaoManualNivel(nivel)">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Nível</h2>\n        <ion-note text-wrap>É obrigatória a definição manual da avaliação deste nível, devido aos critérios pendentes</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <button\n            ion-button round  small color="avaliacaoVermelho" [outline]="nivel.avaliacaoManual !== \'vermelho\'"\n            (click)="nivel.avaliacaoManual !== \'vermelho\'? avaliarNivelManual(\'vermelho\'): avaliarNivelManual(null)">\n            <ion-icon name="close"></ion-icon>\n          </button>\n\n          <button\n            ion-button round  small color="avaliacaoAmarelo" [outline]="nivel.avaliacaoManual !== \'amarelo\'"\n            (click)="nivel.avaliacaoManual !== \'amarelo\'? avaliarNivelManual(\'amarelo\'): avaliarNivelManual(null)">\n            <ion-icon name="help"></ion-icon>\n          </button>\n        </div>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n  <ion-card *ngFor="let criterio of criterios$ | async">\n\n    <ion-item margin-left="45" padding-right="30" (click)="abrirItensDeAvaliacao(criterio)" (tap)="abrirItensDeAvaliacao(criterio)">\n      <ion-card-title>{{criterio.nome}}</ion-card-title>\n      <ion-icon item-end [color]="avaliacaoService.newGetCorCriterio(criterio)" [name]="avaliacaoService.newGetAvaliacaoCriterio(criterio) == \'avaliacaoManual\'? avaliacaoService.ICON_AVALIACAO_MANUAL : avaliacaoService.ICON_ESTRELA"></ion-icon>\n    </ion-item>\n\n    <ion-card-content (click)="abrirItensDeAvaliacao(criterio)">\n      <p margin-left="25" margin-right="20">{{criterio.descricao}}</p>\n    </ion-card-content>\n  </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-criterios\avaliacao-criterios.html"*/,
+            selector: 'page-avaliacao-criterios',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-criterios/avaliacao-criterios.html"*/'<!--\n  Generated template for the AvaliacaoCriteriosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{nivel?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="avaliacaoService.newMostrarCardAvaliacaoManualNivel(nivel)">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Nível</h2>\n        <ion-note text-wrap>É obrigatória a definição manual da avaliação deste nível, devido aos critérios pendentes</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <button\n            ion-button round  small color="avaliacaoVermelho" [outline]="nivel.avaliacaoManual !== \'vermelho\'"\n            (click)="nivel.avaliacaoManual !== \'vermelho\'? avaliarNivelManual(\'vermelho\'): avaliarNivelManual(null)">\n            <ion-icon name="close"></ion-icon>\n          </button>\n\n          <button\n            ion-button round  small color="avaliacaoAmarelo" [outline]="nivel.avaliacaoManual !== \'amarelo\'"\n            (click)="nivel.avaliacaoManual !== \'amarelo\'? avaliarNivelManual(\'amarelo\'): avaliarNivelManual(null)">\n            <ion-icon name="help"></ion-icon>\n          </button>\n        </div>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n  <ion-card *ngFor="let criterio of criterios$ | async">\n\n    <ion-item margin-left="45" padding-right="30" (click)="abrirItensDeAvaliacao(criterio)" (tap)="abrirItensDeAvaliacao(criterio)">\n      <ion-card-title>{{criterio.nome}}</ion-card-title>\n      <ion-icon item-end [color]="avaliacaoService.newGetCorCriterio(criterio)" [name]="avaliacaoService.newGetAvaliacaoCriterio(criterio) == \'avaliacaoManual\'? avaliacaoService.ICON_AVALIACAO_MANUAL : avaliacaoService.ICON_ESTRELA"></ion-icon>\n    </ion-item>\n\n    <ion-card-content (click)="abrirItensDeAvaliacao(criterio)">\n      <p margin-left="25" margin-right="20">{{criterio.descricao}}</p>\n    </ion-card-content>\n  </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-criterios/avaliacao-criterios.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_avaliacao__["a" /* AvaliacaoService */], __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__["AngularFireAuth"]])
     ], AvaliacaoCriteriosPage);
@@ -616,7 +616,7 @@ var AvaliacaoItensPage = /** @class */ (function () {
     };
     AvaliacaoItensPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-avaliacao-itens',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-itens\avaliacao-itens.html"*/'<!--\n  Generated template for the AvaliacaoItensPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <!--<ion-navbar>-->\n    <!--<ion-title>{{criterio?.nome}}</ion-title>-->\n  <!--</ion-navbar>-->\n\n  <ion-navbar hideBackButton>\n    <ion-buttons left>\n      <button ion-button icon-left="" (click)="backClick()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>{{criterio?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="avaliacaoService.newMostrarCardAvaliacaoManualCriterio(criterio)">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Critério</h2>\n        <ion-note text-wrap>É obrigatória a definição manual da avaliação deste critério, devido aos itens pendentes</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <button\n            ion-button round  small color="avaliacaoVermelho" [outline]="criterio.avaliacaoManual !== \'vermelho\'"\n            (click)="criterio.avaliacaoManual !== \'vermelho\'? avaliarCriterioManual(\'vermelho\'): avaliarCriterioManual(null)">\n            <ion-icon name="close"></ion-icon>\n          </button>\n\n          <button\n            ion-button round  small color="avaliacaoAmarelo" [outline]="criterio.avaliacaoManual !== \'amarelo\'"\n            (click)="criterio.avaliacaoManual !== \'amarelo\'? avaliarCriterioManual(\'amarelo\'): avaliarCriterioManual(null)">\n            <ion-icon name="help"></ion-icon>\n          </button>\n        </div>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n  <ion-card *ngFor="let item of itensDeAvaliacao; let i = index">\n\n    <ion-card-header>\n\n      <ion-card-title>Item {{i+1}}</ion-card-title>\n\n      <ion-label text-wrap> <p>{{item.descricao}}</p></ion-label>\n\n        <button\n          ion-button\n          mini\n          clear\n          icon-only\n          (click)="alterarVisualizacaoObservacao(item,i)">\n          <ion-icon\n            [name]="getIconeShowObservacao(item,i)">\n          </ion-icon>\n        </button>\n\n      <ion-row float-right>\n          <button ion-button  round  small color="avaliacaoVermelho" [outline]="item.avaliacao !== \'vermelho\'"\n                  (click)="item.avaliacao !== \'vermelho\'? avaliarComo(item,\'vermelho\') : avaliarComo(item, null)"\n          >\n            <ion-icon name="close"></ion-icon>\n          </button>\n          <button ion-button  round small  color="avaliacaoAmarelo"  [outline]="item.avaliacao !== \'amarelo\'"\n                  (click)="item.avaliacao !== \'amarelo\'? avaliarComo(item,\'amarelo\') : avaliarComo(item, null)"\n          >\n            <ion-icon name="help"></ion-icon>\n          </button>\n          <button ion-button  round  small color="avaliacaoVerde"    [outline]="item.avaliacao !== \'verde\'"\n                  (click)="item.avaliacao !== \'verde\'? avaliarComo(item,\'verde\') : avaliarComo(item, null)"\n          >\n            <ion-icon name="checkmark"></ion-icon>\n          </button>\n        </ion-row>\n\n      <ion-item no-lines *ngIf="mostrarObservacao(item,i)">\n        <ion-label color="primary" stacked>Observação</ion-label>\n        <ion-textarea autosize class="md-no-underline text-area-observacao" name="observacao" [(ngModel)]="item.observacao" (ionChange)="observacaoOnChange(item.observacao,i)"></ion-textarea>\n      </ion-item>\n\n      <ion-row float-right *ngIf="mostrarObservacao(item,i)">\n        <button ion-button mini round clear (click)="salvarObservacao(item, item.observacao, i)">Salvar</button>\n      </ion-row>\n\n    </ion-card-header>\n\n  </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao-itens\avaliacao-itens.html"*/,
+            selector: 'page-avaliacao-itens',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-itens/avaliacao-itens.html"*/'<!--\n  Generated template for the AvaliacaoItensPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <!--<ion-navbar>-->\n    <!--<ion-title>{{criterio?.nome}}</ion-title>-->\n  <!--</ion-navbar>-->\n\n  <ion-navbar hideBackButton>\n    <ion-buttons left>\n      <button ion-button icon-left="" (click)="backClick()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>{{criterio?.nome}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n    <!--Avaliação Manual-->\n    <ion-card *ngIf="avaliacaoService.newMostrarCardAvaliacaoManualCriterio(criterio)">\n\n      <ion-card-header margin-left="45" margin-right="45" text-center="">\n        <h2>Avaliação Manual de Critério</h2>\n        <ion-note text-wrap>É obrigatória a definição manual da avaliação deste critério, devido aos itens pendentes</ion-note>\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <div text-center>\n          <button\n            ion-button round  small color="avaliacaoVermelho" [outline]="criterio.avaliacaoManual !== \'vermelho\'"\n            (click)="criterio.avaliacaoManual !== \'vermelho\'? avaliarCriterioManual(\'vermelho\'): avaliarCriterioManual(null)">\n            <ion-icon name="close"></ion-icon>\n          </button>\n\n          <button\n            ion-button round  small color="avaliacaoAmarelo" [outline]="criterio.avaliacaoManual !== \'amarelo\'"\n            (click)="criterio.avaliacaoManual !== \'amarelo\'? avaliarCriterioManual(\'amarelo\'): avaliarCriterioManual(null)">\n            <ion-icon name="help"></ion-icon>\n          </button>\n        </div>\n\n\n      </ion-card-content>\n\n    </ion-card>\n\n  <ion-card *ngFor="let item of itensDeAvaliacao; let i = index">\n\n    <ion-card-header>\n\n      <ion-card-title>Item {{i+1}}</ion-card-title>\n\n      <ion-label text-wrap> <p>{{item.descricao}}</p></ion-label>\n\n        <button\n          ion-button\n          mini\n          clear\n          icon-only\n          (click)="alterarVisualizacaoObservacao(item,i)">\n          <ion-icon\n            [name]="getIconeShowObservacao(item,i)">\n          </ion-icon>\n        </button>\n\n      <ion-row float-right>\n          <button ion-button  round  small color="avaliacaoVermelho" [outline]="item.avaliacao !== \'vermelho\'"\n                  (click)="item.avaliacao !== \'vermelho\'? avaliarComo(item,\'vermelho\') : avaliarComo(item, null)"\n          >\n            <ion-icon name="close"></ion-icon>\n          </button>\n          <button ion-button  round small  color="avaliacaoAmarelo"  [outline]="item.avaliacao !== \'amarelo\'"\n                  (click)="item.avaliacao !== \'amarelo\'? avaliarComo(item,\'amarelo\') : avaliarComo(item, null)"\n          >\n            <ion-icon name="help"></ion-icon>\n          </button>\n          <button ion-button  round  small color="avaliacaoVerde"    [outline]="item.avaliacao !== \'verde\'"\n                  (click)="item.avaliacao !== \'verde\'? avaliarComo(item,\'verde\') : avaliarComo(item, null)"\n          >\n            <ion-icon name="checkmark"></ion-icon>\n          </button>\n        </ion-row>\n\n      <ion-item no-lines *ngIf="mostrarObservacao(item,i)">\n        <ion-label color="primary" stacked>Observação</ion-label>\n        <ion-textarea autosize class="md-no-underline text-area-observacao" name="observacao" [(ngModel)]="item.observacao" (ionChange)="observacaoOnChange(item.observacao,i)"></ion-textarea>\n      </ion-item>\n\n      <ion-row float-right *ngIf="mostrarObservacao(item,i)">\n        <button ion-button mini round clear (click)="salvarObservacao(item, item.observacao, i)">Salvar</button>\n      </ion-row>\n\n    </ion-card-header>\n\n  </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao-itens/avaliacao-itens.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -714,7 +714,7 @@ var EdicaoCriterioPage = /** @class */ (function () {
     };
     EdicaoCriterioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edicao-criterio',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\edicao-criterio\edicao-criterio.html"*/'<!--\n  Generated template for the EdicaoCriterioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{criterio.nome ? criterio.nome : \'Novo Critério\'}}</ion-title>\n\n    <ion-buttons end>\n      <button showWhen="android,ios" ion-button (click)="toggleEditable()">{{editableOn ? \'Ok\' : \'Editar\'}}</button>\n    </ion-buttons>\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat" text-center>\n\n    <ion-card *ngIf="!editableOn">\n      <ion-item>\n        <h2>Descrição</h2>\n        <p text-wrap="">{{criterio.descricao ? criterio.descricao : \'Este critério ainda não possui descrição.\'}}</p>\n      </ion-item>\n    </ion-card>\n\n    <ion-card *ngIf="editableOn">\n      <ion-item>\n        <ion-label color="dark">Nome do Critério</ion-label>\n        <ion-input placeholder="Nome" [value]="criterio.nome" name="nome" [(ngModel)]="criterio.nome"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label color="dark">Descrição</ion-label>\n        <ion-textarea *ngIf="editableOn" autosize class="md-no-underline text-area-observacao" name="descricao"\n                      [(ngModel)]="criterio.descricao" placeholder="Descrição do novo critério"></ion-textarea>\n      </ion-item>\n\n    </ion-card>\n\n    <ion-card>\n      <ion-list>\n\n        <div *ngIf="!editableOn">\n\n          <ion-item *ngFor="let item of criterio.itensDeAvaliacao">\n            <h2>Item {{criterio.itensDeAvaliacao.indexOf(item) + 1}}</h2>\n            <p text-wrap="">{{item.descricao ? item.descricao : \'Este item não possui descricão\'}}</p>\n          </ion-item>\n        </div>\n\n\n        <div *ngIf="editableOn">\n          <ion-item-group [reorder]="editableOn" (ionItemReorder)="reorderItems($event)">\n\n            <ion-item ion-item *ngFor="let item of criterio.itensDeAvaliacao">\n\n              <ion-label>Item {{criterio.itensDeAvaliacao.indexOf(item) + 1}}</ion-label>\n\n              <ion-textarea style="color: #555555" autosize class="md-no-underline text-area-observacao"\n                            name="descricao"\n                            [(ngModel)]="item.descricao" placeholder="Descrição do novo item"></ion-textarea>\n\n              <button icon-only ion-button item-start color="danger"\n                      (click)="removeItem(item);$event.stopPropagation();this.changeRef.detectChanges();">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n\n            </ion-item>\n          </ion-item-group>\n\n        </div>\n\n\n      </ion-list>\n    </ion-card>\n\n    <ion-row padding>\n      <button showWhen="core" padding class="centralized" ion-button (click)="toggleEditable()">\n        {{editableOn ? \'Confirmar\' : \'Editar\'}}\n      </button>\n\n      <button *ngIf="editableOn" ion-button align-self-end showWhen="core" color="danger" icon-only (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n    </ion-row>\n\n  </div>\n\n  <ion-fab bottom right *ngIf="editableOn">\n    <button ion-fab color="danger" (click)="adicionar()">\n      <ion-icon name="add"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\edicao-criterio\edicao-criterio.html"*/,
+            selector: 'page-edicao-criterio',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/edicao-criterio/edicao-criterio.html"*/'<!--\n  Generated template for the EdicaoCriterioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{criterio.nome ? criterio.nome : \'Novo Critério\'}}</ion-title>\n\n    <ion-buttons end>\n      <button showWhen="android,ios" ion-button (click)="toggleEditable()">{{editableOn ? \'Ok\' : \'Editar\'}}</button>\n    </ion-buttons>\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat" text-center>\n\n    <ion-card *ngIf="!editableOn">\n      <ion-item>\n        <h2>Descrição</h2>\n        <p text-wrap="">{{criterio.descricao ? criterio.descricao : \'Este critério ainda não possui descrição.\'}}</p>\n      </ion-item>\n    </ion-card>\n\n    <ion-card *ngIf="editableOn">\n      <ion-item>\n        <ion-label color="dark">Nome do Critério</ion-label>\n        <ion-input placeholder="Nome" [value]="criterio.nome" name="nome" [(ngModel)]="criterio.nome"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label color="dark">Descrição</ion-label>\n        <ion-textarea *ngIf="editableOn" autosize class="md-no-underline text-area-observacao" name="descricao"\n                      [(ngModel)]="criterio.descricao" placeholder="Descrição do novo critério"></ion-textarea>\n      </ion-item>\n\n    </ion-card>\n\n    <ion-card>\n      <ion-list>\n\n        <div *ngIf="!editableOn">\n\n          <ion-item *ngFor="let item of criterio.itensDeAvaliacao">\n            <h2>Item {{criterio.itensDeAvaliacao.indexOf(item) + 1}}</h2>\n            <p text-wrap="">{{item.descricao ? item.descricao : \'Este item não possui descricão\'}}</p>\n          </ion-item>\n        </div>\n\n\n        <div *ngIf="editableOn">\n          <ion-item-group [reorder]="editableOn" (ionItemReorder)="reorderItems($event)">\n\n            <ion-item ion-item *ngFor="let item of criterio.itensDeAvaliacao">\n\n              <ion-label>Item {{criterio.itensDeAvaliacao.indexOf(item) + 1}}</ion-label>\n\n              <ion-textarea style="color: #555555" autosize class="md-no-underline text-area-observacao"\n                            name="descricao"\n                            [(ngModel)]="item.descricao" placeholder="Descrição do novo item"></ion-textarea>\n\n              <button icon-only ion-button item-start color="danger"\n                      (click)="removeItem(item);$event.stopPropagation();this.changeRef.detectChanges();">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n\n            </ion-item>\n          </ion-item-group>\n\n        </div>\n\n\n      </ion-list>\n    </ion-card>\n\n    <ion-row padding>\n      <button showWhen="core" padding class="centralized" ion-button (click)="toggleEditable()">\n        {{editableOn ? \'Confirmar\' : \'Editar\'}}\n      </button>\n\n      <button *ngIf="editableOn" ion-button align-self-end showWhen="core" color="danger" icon-only (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n    </ion-row>\n\n  </div>\n\n  <ion-fab bottom right *ngIf="editableOn">\n    <button showWhen="android,ios" ion-fab color="danger" (click)="adicionar()">\n      <ion-icon name="add"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/edicao-criterio/edicao-criterio.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], EdicaoCriterioPage);
@@ -726,214 +726,6 @@ var EdicaoCriterioPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 171:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EdicaoNiveisPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_database__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__edicao_nivel_edicao_nivel__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_nivel__ = __webpack_require__(139);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the EdicaoNiveisPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var EdicaoNiveisPage = /** @class */ (function () {
-    function EdicaoNiveisPage(navCtrl, nivelService, navParams, db, changeRef, alertCtrl, toastCtrl) {
-        // this.nivelHistorico.nome = "";
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.nivelService = nivelService;
-        this.navParams = navParams;
-        this.db = db;
-        this.changeRef = changeRef;
-        this.alertCtrl = alertCtrl;
-        this.toastCtrl = toastCtrl;
-        this.niveis = [];
-        this.niveisRollback = [];
-        this.editableOn = false;
-        this.db.database.ref('niveis').on("value", function (data) {
-            if (!data.val())
-                return;
-            _this.niveis = Object.values(data.val());
-            _this.niveisRollback = _this.niveis.slice(); // copia
-            _this.changeRef.detectChanges(); // força atualizações quando pega primeira resposta
-        }, function () { console.log('ERRO AO BUSCAR NÍVEIS'); return []; });
-        var refUltimaOrganizacaoDeNiveis = this.db.database.ref('historicoDeNiveis').orderByChild('dataCriacao').limitToLast(1);
-        var self = this;
-        refUltimaOrganizacaoDeNiveis.on("value", function (data) {
-            _this.nivelHistorico = Object.values(data.val())[0];
-            _this.changeRef.detectChanges(); // força atualizações quando pega primeira resposta
-            //debug
-            console.log(_this.nivelHistorico);
-        });
-    }
-    EdicaoNiveisPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EdicaoNiveisPage');
-    };
-    EdicaoNiveisPage.prototype.reorderItems = function (indexes) {
-        this.niveis = Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* reorderArray */])(this.niveis, indexes);
-    };
-    EdicaoNiveisPage.prototype.salvarNiveis = function () {
-        var _this = this;
-        console.log('salvar nova versão');
-        var alert = this.alertCtrl.create({
-            title: 'Editar Níveis',
-            message: 'Criar uma nova versão da estrutura de níveis ou fazer uma alteração simples na versão já existente?',
-            buttons: [
-                {
-                    text: 'Alteração',
-                    handler: function () {
-                        _this.salvarAlteracaoSimplesNaEstruturaAtual();
-                    }
-                },
-                {
-                    text: 'Nova Versão',
-                    handler: function () {
-                        _this.salvarNovaVersaoDeNivel();
-                    }
-                },
-                {
-                    text: 'Cancelar',
-                    role: 'cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-            ]
-        });
-        alert.present();
-    };
-    EdicaoNiveisPage.prototype.salvarAlteracaoSimplesNaEstruturaAtual = function () {
-        this.nivelService.deleteNiveis();
-        this.nivelService.saveNiveis(this.niveis);
-        var toast = this.toastCtrl.create({
-            message: 'Alteração da versão atual salva com sucesso!',
-            duration: 3000,
-        });
-        toast.present();
-    };
-    EdicaoNiveisPage.prototype.salvarNovaVersaoDeNivel = function () {
-        var _this = this;
-        console.log('salvar nova versão');
-        var alert = this.alertCtrl.create({
-            title: 'Nova Estrutura de Níveis',
-            message: 'Defina um nome para a nova estrutura de níveis.',
-            inputs: [
-                {
-                    name: 'nome',
-                    placeholder: 'Nome da Estrutra'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    role: 'cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Salva',
-                    handler: function (data) {
-                        _this.nivelService.saveNiveisHistorico(_this.niveis, data.nome);
-                        _this.nivelService.deleteNiveis();
-                        _this.nivelService.saveNiveis(_this.niveis);
-                        var toast = _this.toastCtrl.create({
-                            message: 'Nova estrutura de níveis salva com sucesso!',
-                            duration: 3000,
-                        });
-                        toast.present();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    EdicaoNiveisPage.prototype.irParaEdicaoDeNivel = function (nivel) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__edicao_nivel_edicao_nivel__["a" /* EdicaoNivelPage */], { nivel: nivel });
-    };
-    EdicaoNiveisPage.prototype.toggleEditable = function () {
-        //debug
-        console.log(this.niveis);
-        this.editableOn = !this.editableOn;
-        this.changeRef.detectChanges();
-    };
-    EdicaoNiveisPage.prototype.removerNivel = function (nivel) {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Excluir Nível?',
-            message: 'Você quer excluir este nível?',
-            buttons: [
-                {
-                    text: 'Cancelar',
-                    role: 'cancel',
-                    handler: function () {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Excluir',
-                    handler: function () {
-                        var index = _this.niveis.indexOf(nivel);
-                        if (index !== -1) {
-                            _this.niveis.splice(index, 1);
-                        }
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    EdicaoNiveisPage.prototype.adicionar = function () {
-        var novoNivel = { nome: '', criterios: [] };
-        this.niveis.push(novoNivel);
-        this.changeRef.detectChanges();
-    };
-    EdicaoNiveisPage.prototype.getUrlImagemNivel = function (nivel) {
-        if (nivel === "Novo Nível")
-            return 'http://nqi.ufcspa.edu.br/wiki/selos-niveis/' + "Nível 0" + '.png';
-        return 'http://nqi.ufcspa.edu.br/wiki/selos-niveis/' + nivel + '.png';
-    };
-    EdicaoNiveisPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edicao-niveis',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\edicao-niveis\edicao-niveis.html"*/'<!--\n  Generated template for the EdicaoNiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>M3P</ion-title>\n\n    <ion-buttons end>\n      <button ion-button showWhen="android,ios" (click)="toggleEditable()">{{editableOn? \'Ok\' : \'Editar\'}}</button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat" text-center>\n\n    <ion-card>\n<ion-item>\n\n      <ion-label align-self-start><strong>Versão</strong></ion-label>\n      <ion-label>{{nivelHistorico? nivelHistorico.nome : ""}}</ion-label>\n\n\n\n</ion-item>\n    </ion-card>\n\n<ion-card>\n  <ion-list>\n    <ion-item-group [reorder]="editableOn" (ionItemReorder)="reorderItems($event)">\n\n      <button ion-item *ngFor="let nivel of niveis" (click)="irParaEdicaoDeNivel(nivel)">\n\n        <ion-avatar item-start="">\n          <img src="{{getUrlImagemNivel(nivel.nome)}}">\n        </ion-avatar>\n\n        <ion-label>{{nivel.nome ? nivel.nome : \'Novo Nível\'}}</ion-label>\n        <button *ngIf="editableOn" icon-only ion-button item-start color="danger" (click)="removerNivel(nivel);$event.stopPropagation();this.changeRef.detectChanges();">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n\n      </button>\n\n    </ion-item-group>\n\n  </ion-list>\n</ion-card>\n\n    <ion-row padding>\n      <button showWhen="core" padding class="centralized" ion-button (click)="toggleEditable()">\n        {{editableOn ? \'Confirmar\' : \'Editar\'}}\n      </button>\n\n      <button *ngIf="editableOn" ion-button align-self-end showWhen="core" color="danger" icon-only (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n    </ion-row>\n\n    <ion-row padding-top="100px">\n      <button padding class="centralized" ion-button (click)="salvarNiveis()">\n        Salvar Níveis\n      </button>\n    </ion-row>\n\n  </div>\n\n  <ion-fab bottom right *ngIf="editableOn">\n    <button showWhen="android,ios" ion-fab color="danger" (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\edicao-niveis\edicao-niveis.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__services_nivel__["a" /* NivelService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["AngularFireDatabase"],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
-    ], EdicaoNiveisPage);
-    return EdicaoNiveisPage;
-}());
-
-//# sourceMappingURL=edicao-niveis.js.map
-
-/***/ }),
-
-/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1021,7 +813,7 @@ var EdicaoNivelPage = /** @class */ (function () {
     };
     EdicaoNivelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edicao-nivel',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\edicao-nivel\edicao-nivel.html"*/'<!--\n  Generated template for the EdicaoNivelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{nivel.nome ? nivel.nome : \'Novo Nível\'}}</ion-title>\n\n    <ion-buttons end>\n      <button showWhen="android,ios"  ion-button (click)="toggleEditable()">{{editableOn ? \'Ok\' : \'Editar\'}}</button>\n    </ion-buttons>\n\n\n  </ion-navbar>\n\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat" text-center>\n\n    <ion-card *ngIf="editableOn">\n      <ion-item>\n        <ion-label color="dark">Nome do Nível</ion-label>\n        <ion-input placeholder="Nome" [value]="nivel.nome" name="nome" [(ngModel)]="nivel.nome"></ion-input>\n      </ion-item>\n    </ion-card>\n\n<ion-card>\n  <ion-list>\n    <ion-item-group [reorder]="editableOn" (ionItemReorder)="reorderItems($event)">\n\n      <button ion-item *ngFor="let criterio of nivel.criterios" (click)="irParaEdicaoDeCriterio(criterio)">\n        <ion-label>{{criterio.nome ? criterio.nome : \'Novo Critério\'}}</ion-label>\n        <button *ngIf="editableOn" icon-only ion-button item-start color="danger" (click)="removerCriterio(criterio);$event.stopPropagation();this.changeRef.detectChanges();">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n\n      </button>\n\n    </ion-item-group>\n\n  </ion-list>\n</ion-card>\n\n    <ion-row padding>\n      <button showWhen="core" padding class="centralized" ion-button (click)="toggleEditable()">\n        {{editableOn ? \'Confirmar\' : \'Editar\'}}\n      </button>\n\n      <button *ngIf="editableOn" ion-button align-self-end showWhen="core" color="danger" icon-only (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n    </ion-row>\n\n  </div>\n\n  <ion-fab bottom right *ngIf="editableOn">\n    <button showWhen="android,ios" ion-fab color="danger" (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\edicao-nivel\edicao-nivel.html"*/,
+            selector: 'page-edicao-nivel',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/edicao-nivel/edicao-nivel.html"*/'<!--\n  Generated template for the EdicaoNivelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{nivel.nome ? nivel.nome : \'Novo Nível\'}}</ion-title>\n\n    <ion-buttons end>\n      <button showWhen="android,ios"  ion-button (click)="toggleEditable()">{{editableOn ? \'Ok\' : \'Editar\'}}</button>\n    </ion-buttons>\n\n\n  </ion-navbar>\n\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat" text-center>\n\n    <ion-card *ngIf="editableOn">\n      <ion-item>\n        <ion-label color="dark">Nome do Nível</ion-label>\n        <ion-input placeholder="Nome" [value]="nivel.nome" name="nome" [(ngModel)]="nivel.nome"></ion-input>\n      </ion-item>\n    </ion-card>\n\n<ion-card>\n  <ion-list>\n    <ion-item-group [reorder]="editableOn" (ionItemReorder)="reorderItems($event)">\n\n      <button ion-item *ngFor="let criterio of nivel.criterios" (click)="irParaEdicaoDeCriterio(criterio)">\n        <ion-label>{{criterio.nome ? criterio.nome : \'Novo Critério\'}}</ion-label>\n        <button *ngIf="editableOn" icon-only ion-button item-start color="danger" (click)="removerCriterio(criterio);$event.stopPropagation();this.changeRef.detectChanges();">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n\n      </button>\n\n    </ion-item-group>\n\n  </ion-list>\n</ion-card>\n\n    <ion-row padding>\n      <button showWhen="core" padding class="centralized" ion-button (click)="toggleEditable()">\n        {{editableOn ? \'Confirmar\' : \'Editar\'}}\n      </button>\n\n      <button *ngIf="editableOn" ion-button align-self-end showWhen="core" color="danger" icon-only (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n    </ion-row>\n\n  </div>\n\n  <ion-fab bottom right *ngIf="editableOn">\n    <button showWhen="android,ios" ion-fab color="danger" (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/edicao-nivel/edicao-nivel.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], EdicaoNivelPage);
@@ -1032,7 +824,7 @@ var EdicaoNivelPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 173:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1041,13 +833,13 @@ var EdicaoNivelPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_setor__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_setor_cadastro_setor__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setor_setor__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_setor_cadastro_setor__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setor_setor__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_compat_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__login_login__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__login_login__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(141);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -1163,7 +955,7 @@ var SetoresPage = /** @class */ (function () {
     };
     SetoresPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-setores',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\setores\setores.html"*/'<!--\n  Generated template for the SetoresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons start>\n      <button ion-button icon-only (click)="logoff()">\n        <ion-icon name="log-out"></ion-icon>\n      </button>\n    </ion-buttons>\n\n    <ion-title>Setores</ion-title>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons hideWhen="android, core" end>\n      <button ion-button icon-only (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <!--Barra de Pesquisa-->\n  <ion-toolbar>\n    <ion-searchbar\n      class="browser-compat"\n      placeholder="Procurar"\n      [(ngModel)]="myInput"\n      [showCancelButton]="shouldShowCancel"\n      (ionInput)="filterItems($event)"\n      (ionCancel)="onCancel()">\n    </ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat">\n    <ion-list>\n      <ion-card (click)="irParaPaginaDoSetor(setor)" *ngFor="let setor of setoresFiltrados$ | async" >\n\n        <div *ngIf="setor?.ativo">\n          <ion-item>\n            <ion-avatar *ngIf="setor.nivel" icone-estrela item-end>\n              <img src={{getUrlImagemNivel(setor.nivel)}}>\n            </ion-avatar>\n            <h2>{{setor.sigla}}</h2>\n            <p>{{setor.nome}}</p>\n            <div *ngIf="setor.vinculo" margin-top="1">\n              <p>{{setor.vinculo}}</p>\n            </div>\n          </ion-item>\n\n          <ion-card-content>\n            <ion-note *ngIf="!setor.sendoAvaliado">{{setor.ultimaAvaliacao? \'Última Avaliação: \'+setor.ultimaAvaliacao : \'Setor ainda não avaliado\'}}</ion-note>\n            <ion-note *ngIf="setor.sendoAvaliado" color="danger">Avaliação em andamento</ion-note>\n          </ion-card-content>\n        </div>\n\n      </ion-card>\n    </ion-list>\n\n    <button padding showWhen="core" class="centralized" ion-button (click)="addSetor()">\n      Adicionar Setor\n    </button>\n  </div>\n\n  <ion-fab bottom right>\n    <button ion-fab showWhen="android" (click)="addSetor()">\n      <ion-icon name="add"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\setores\setores.html"*/,
+            selector: 'page-setores',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/setores/setores.html"*/'<!--\n  Generated template for the SetoresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons start>\n      <button ion-button icon-only (click)="logoff()">\n        <ion-icon name="log-out"></ion-icon>\n      </button>\n    </ion-buttons>\n\n    <ion-title>Setores</ion-title>\n\n    <!--Botão de adicionar no iOS-->\n    <ion-buttons hideWhen="android, core" end>\n      <button ion-button icon-only (click)="addSetor()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <!--Barra de Pesquisa-->\n  <ion-toolbar>\n    <ion-searchbar\n      class="browser-compat"\n      placeholder="Procurar"\n      [(ngModel)]="myInput"\n      [showCancelButton]="shouldShowCancel"\n      (ionInput)="filterItems($event)"\n      (ionCancel)="onCancel()">\n    </ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat">\n    <ion-list>\n      <ion-card (click)="irParaPaginaDoSetor(setor)" *ngFor="let setor of setoresFiltrados$ | async" >\n\n        <div *ngIf="setor?.ativo">\n          <ion-item>\n            <ion-avatar *ngIf="setor.nivel" icone-estrela item-end>\n              <img src={{getUrlImagemNivel(setor.nivel)}}>\n            </ion-avatar>\n            <h2>{{setor.sigla}}</h2>\n            <p>{{setor.nome}}</p>\n            <div *ngIf="setor.vinculo" margin-top="1">\n              <p>{{setor.vinculo}}</p>\n            </div>\n          </ion-item>\n\n          <ion-card-content>\n            <ion-note *ngIf="!setor.sendoAvaliado">{{setor.ultimaAvaliacao? \'Última Avaliação: \'+setor.ultimaAvaliacao : \'Setor ainda não avaliado\'}}</ion-note>\n            <ion-note *ngIf="setor.sendoAvaliado" color="danger">Avaliação em andamento</ion-note>\n          </ion-card-content>\n        </div>\n\n      </ion-card>\n    </ion-list>\n\n    <button padding showWhen="core" class="centralized" ion-button (click)="addSetor()">\n      Adicionar Setor\n    </button>\n  </div>\n\n  <ion-fab bottom right>\n    <button ion-fab showWhen="android" (click)="addSetor()">\n      <ion-icon name="add"></ion-icon>\n    </button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/setores/setores.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -1182,17 +974,17 @@ var SetoresPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 174:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SetorPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_setor_cadastro_setor__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_setor_cadastro_setor__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setor__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__avaliacao_avaliacao__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pre_avaliacao_pre_avaliacao__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__avaliacao_avaliacao__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pre_avaliacao_pre_avaliacao__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_avaliacao__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operators__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__avaliacao_anterior_avaliacao_anterior__ = __webpack_require__(165);
@@ -1337,7 +1129,7 @@ var SetorPage = /** @class */ (function () {
     };
     SetorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-setor',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\setor\setor.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-title>{{setor.sigla}}</ion-title>-->\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="editarSetor()">\n        <ion-icon name="create"></ion-icon>\n      </button>\n\n      <button ion-button icon-only (click)="excluirSetor()">\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content pading class="bg-image">\n\n  <div padding class="browser-compat">\n\n    <ion-list-header showWhen="ios" text-center padding ion-text text-wrap><h2>{{setor.nome}}</h2><br><p>({{setor.sigla}})</p></ion-list-header>\n\n    <ion-card padding  class="nome-setor" hideWhen="ios">\n      <h2 text-center text-wrap>{{setor.nome}}</h2>\n      <p text-center>({{setor.sigla}})</p>\n    </ion-card>\n\n    <ion-card>\n\n      <ion-list>\n\n        <ion-item *ngIf="setor.vinculo">\n          <p>Vínculo</p>\n          <h2>{{setor.vinculo}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Nível Atual</p>\n          <h2>{{setor.nivel? setor.nivel : "NA"}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Líder de Processos</p>\n          <h2>{{setor.lider? setor.lider : "Não especificado"}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Email do Líder</p>\n          <h2>{{setor.emailLider? setor.emailLider : "Não especificado"}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Última Avaliação</p>\n          <h2>{{setor.ultimaAvaliacao? setor.ultimaAvaliacao : "NA"}}</h2>\n        </ion-item>\n\n      </ion-list>\n    </ion-card>\n\n    <ion-card>\n      <ion-card-header>\n        Histórico de Avaliações\n      </ion-card-header>\n\n      <ion-item *ngIf="(historico$ | async)?.length==0"><p text-center>O setor não possui avaliações anteriores</p></ion-item>\n\n      <ion-list>\n\n        <div *ngFor="let avaliacao of historico$ | async | reverse; let i = index">\n          <ion-item *ngIf="mostrarHistoricoCompleto || (i <= 2)">\n\n            <!--Caso ja tenha finalizado-->\n            <div (click)="(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) || (avaliacao.dataInicioAvaliacaoComplementar && avaliacao.dataFimAvaliacaoComplementar)? verAvaliacaoAnterior(avaliacao):avaliarSetor()">\n              <h3 ion-text [color]="(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) || (avaliacao.dataInicioAvaliacaoComplementar && avaliacao.dataFimAvaliacaoComplementar)? \'dark\' : \'danger\'">{{(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) || (avaliacao.dataInicioAvaliacaoComplementar && avaliacao.dataFimAvaliacaoComplementar)? avaliacao.nivelAtingido : \'Em andamento\'}}</h3>\n              <p>{{avaliacao.dataFim? avaliacao.dataFim: avaliacao.dataInicio}}</p>\n            </div>\n\n\n\n            <!--Botão de avaliação complementar-->\n            <button small round outline ion-button item-end icon-right *ngIf="(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) && (i==0)" (click)="iniciarAvaliacaoComplementarClick(avaliacao)">\n              Complementar\n              <ion-icon color="danger" name="refresh"></ion-icon>\n            </button>\n\n          </ion-item>\n\n        </div>\n\n\n      </ion-list>\n\n      <button ion-button clear small full *ngIf="(historico$ | async)?.length>3"\n              (click)="verMaisMenosClick()">{{btnVerMaisMenosContent}}</button>\n\n    </ion-card>\n  </div>\n\n\n  <ion-fab bottom right>\n    <button ion-fab color="danger" (click)="avaliarSetor()"><ion-icon name="clipboard"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\setor\setor.html"*/,
+            selector: 'page-setor',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/setor/setor.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-title>{{setor.sigla}}</ion-title>-->\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="editarSetor()">\n        <ion-icon name="create"></ion-icon>\n      </button>\n\n      <button ion-button icon-only (click)="excluirSetor()">\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content pading class="bg-image">\n\n  <div padding class="browser-compat">\n\n    <ion-list-header showWhen="ios" text-center padding ion-text text-wrap><h2>{{setor.nome}}</h2><br><p>({{setor.sigla}})</p></ion-list-header>\n\n    <ion-card padding  class="nome-setor" hideWhen="ios">\n      <h2 text-center text-wrap>{{setor.nome}}</h2>\n      <p text-center>({{setor.sigla}})</p>\n    </ion-card>\n\n    <ion-card>\n\n      <ion-list>\n\n        <ion-item *ngIf="setor.vinculo">\n          <p>Vínculo</p>\n          <h2>{{setor.vinculo}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Nível Atual</p>\n          <h2>{{setor.nivel? setor.nivel : "NA"}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Líder de Processos</p>\n          <h2>{{setor.lider? setor.lider : "Não especificado"}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Email do Líder</p>\n          <h2>{{setor.emailLider? setor.emailLider : "Não especificado"}}</h2>\n        </ion-item>\n\n        <ion-item>\n          <p>Última Avaliação</p>\n          <h2>{{setor.ultimaAvaliacao? setor.ultimaAvaliacao : "NA"}}</h2>\n        </ion-item>\n\n      </ion-list>\n    </ion-card>\n\n    <ion-card>\n      <ion-card-header>\n        Histórico de Avaliações\n      </ion-card-header>\n\n      <ion-item *ngIf="(historico$ | async)?.length==0"><p text-center>O setor não possui avaliações anteriores</p></ion-item>\n\n      <ion-list>\n\n        <div *ngFor="let avaliacao of historico$ | async | reverse; let i = index">\n          <ion-item *ngIf="mostrarHistoricoCompleto || (i <= 2)">\n\n            <!--Caso ja tenha finalizado-->\n            <div (click)="(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) || (avaliacao.dataInicioAvaliacaoComplementar && avaliacao.dataFimAvaliacaoComplementar)? verAvaliacaoAnterior(avaliacao):avaliarSetor()">\n              <h3 ion-text [color]="(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) || (avaliacao.dataInicioAvaliacaoComplementar && avaliacao.dataFimAvaliacaoComplementar)? \'dark\' : \'danger\'">{{(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) || (avaliacao.dataInicioAvaliacaoComplementar && avaliacao.dataFimAvaliacaoComplementar)? avaliacao.nivelAtingido : \'Em andamento\'}}</h3>\n              <p>{{avaliacao.dataFim? avaliacao.dataFim: avaliacao.dataInicio}}</p>\n            </div>\n\n\n\n            <!--Botão de avaliação complementar-->\n            <button small round outline ion-button item-end icon-right *ngIf="(avaliacao.dataFim && !avaliacao.dataInicioAvaliacaoComplementar) && (i==0)" (click)="iniciarAvaliacaoComplementarClick(avaliacao)">\n              Complementar\n              <ion-icon color="danger" name="refresh"></ion-icon>\n            </button>\n\n          </ion-item>\n\n        </div>\n\n\n      </ion-list>\n\n      <button ion-button clear small full *ngIf="(historico$ | async)?.length>3"\n              (click)="verMaisMenosClick()">{{btnVerMaisMenosContent}}</button>\n\n    </ion-card>\n  </div>\n\n\n  <ion-fab bottom right>\n    <button ion-fab color="danger" (click)="avaliarSetor()"><ion-icon name="clipboard"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/setor/setor.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -1353,18 +1145,18 @@ var SetorPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 175:
+/***/ 174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreAvaliacaoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nivel__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_nivel__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_setor__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__avaliacao_avaliacao__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__avaliacao_avaliacao__ = __webpack_require__(93);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -1464,7 +1256,7 @@ var PreAvaliacaoPage = /** @class */ (function () {
     };
     PreAvaliacaoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pre-avaliacao',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\pre-avaliacao\pre-avaliacao.html"*/'<!--\n  Generated template for the PreAvaliacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nova Avaliação</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n  <ion-card>\n\n      <ion-card-header>\n        Nível Pretendido\n      </ion-card-header>\n\n    <ion-card-content>\n      <ion-list radio-group [(ngModel)]="nivelPretendido">\n\n        <ion-item *ngFor="let nivel of niveis$ | async; let i = index">\n\n          <ion-label>{{nivel.nome}}</ion-label>\n          <ion-radio value={{nivel.nome}} (ionSelect)="botaoInicialDisabled = false"></ion-radio>\n\n        </ion-item>\n\n      </ion-list>\n    </ion-card-content>\n\n  </ion-card>\n\n  <button ion-button round class="centralized" [disabled]="botaoInicialDisabled" (click)="iniciarAvaliacao()">Iniciar Avaliação</button>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\pre-avaliacao\pre-avaliacao.html"*/,
+            selector: 'page-pre-avaliacao',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/pre-avaliacao/pre-avaliacao.html"*/'<!--\n  Generated template for the PreAvaliacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nova Avaliação</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n  <ion-card>\n\n      <ion-card-header>\n        Nível Pretendido\n      </ion-card-header>\n\n    <ion-card-content>\n      <ion-list radio-group [(ngModel)]="nivelPretendido">\n\n        <ion-item *ngFor="let nivel of niveis$ | async; let i = index">\n\n          <ion-label>{{nivel.nome}}</ion-label>\n          <ion-radio value={{nivel.nome}} (ionSelect)="botaoInicialDisabled = false"></ion-radio>\n\n        </ion-item>\n\n      </ion-list>\n    </ion-card-content>\n\n  </ion-card>\n\n  <button ion-button round class="centralized" [disabled]="botaoInicialDisabled" (click)="iniciarAvaliacao()">Iniciar Avaliação</button>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/pre-avaliacao/pre-avaliacao.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -1477,6 +1269,319 @@ var PreAvaliacaoPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=pre-avaliacao.js.map
+
+/***/ }),
+
+/***/ 175:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EdicaoNiveisPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__edicao_nivel_edicao_nivel__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_nivel__ = __webpack_require__(140);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the EdicaoNiveisPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EdicaoNiveisPage = /** @class */ (function () {
+    function EdicaoNiveisPage(navCtrl, nivelService, navParams, db, changeRef, alertCtrl, toastCtrl) {
+        // this.nivelHistorico.nome = "";
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.nivelService = nivelService;
+        this.navParams = navParams;
+        this.db = db;
+        this.changeRef = changeRef;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.niveis = [];
+        this.niveisRollback = [];
+        this.editableOn = false;
+        this.db.database.ref('niveis').on("value", function (data) {
+            if (!data.val())
+                return;
+            _this.niveis = Object.values(data.val());
+            _this.niveisRollback = _this.niveis.slice(); // copia
+            _this.changeRef.detectChanges(); // força atualizações quando pega primeira resposta
+        }, function () { console.log('ERRO AO BUSCAR NÍVEIS'); return []; });
+        var refUltimaOrganizacaoDeNiveis = this.db.database.ref('historicoDeNiveis').orderByChild('dataCriacao').limitToLast(1);
+        var self = this;
+        refUltimaOrganizacaoDeNiveis.on("value", function (data) {
+            _this.nivelHistorico = Object.values(data.val())[0];
+            _this.changeRef.detectChanges(); // força atualizações quando pega primeira resposta
+            //debug
+            console.log(_this.nivelHistorico);
+        });
+    }
+    EdicaoNiveisPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EdicaoNiveisPage');
+    };
+    EdicaoNiveisPage.prototype.reorderItems = function (indexes) {
+        this.niveis = Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* reorderArray */])(this.niveis, indexes);
+    };
+    EdicaoNiveisPage.prototype.salvarNiveis = function () {
+        var menssagemDeErro = this.validarEstruturaDeNíveis(this.niveis);
+        if (menssagemDeErro)
+            this.mostrarAlertDeErroNaEstrutura(menssagemDeErro);
+        else
+            this.mostrarAlertDeTipoDeAlteracao();
+    };
+    EdicaoNiveisPage.prototype.mostrarAlertDeTipoDeAlteracao = function () {
+        var _this = this;
+        console.log('salvar nova versão');
+        var alert = this.alertCtrl.create({
+            title: 'Editar Níveis',
+            message: 'Criar uma nova versão da estrutura de níveis ou fazer uma alteração simples na versão já existente?',
+            buttons: [
+                {
+                    text: 'Alteração',
+                    handler: function () {
+                        _this.salvarAlteracaoSimplesNaEstruturaAtual();
+                    }
+                },
+                {
+                    text: 'Nova Versão',
+                    handler: function () {
+                        _this.salvarNovaVersaoDeNivel();
+                    }
+                },
+                {
+                    text: 'Cancelar',
+                    role: 'cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+            ]
+        });
+        alert.present();
+    };
+    EdicaoNiveisPage.prototype.salvarAlteracaoSimplesNaEstruturaAtual = function () {
+        this.nivelService.deleteNiveis();
+        this.nivelService.saveNiveis(this.niveis);
+        var toast = this.toastCtrl.create({
+            message: 'Alteração da versão atual salva com sucesso!',
+            duration: 3000,
+        });
+        toast.present();
+    };
+    EdicaoNiveisPage.prototype.salvarNovaVersaoDeNivel = function () {
+        var _this = this;
+        console.log('salvar nova versão');
+        var alert = this.alertCtrl.create({
+            title: 'Nova Estrutura de Níveis',
+            message: 'Defina um nome para a nova estrutura de níveis.',
+            inputs: [
+                {
+                    name: 'nome',
+                    placeholder: 'Nome da Estrutra'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancelar',
+                    role: 'cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Salvar',
+                    handler: function (data) {
+                        if (data.nome)
+                            _this.persistirNovaVersãoNoBanco(data.nome);
+                        else {
+                            var alert_1 = _this.alertCtrl.create({
+                                title: 'Ops!',
+                                subTitle: 'A nova versão de níveis deve possuir um nome',
+                                buttons: [
+                                    {
+                                        text: 'Confirmar',
+                                        role: 'cancel',
+                                        handler: function (data) {
+                                            // pede novamente pelo nome
+                                            _this.salvarNovaVersaoDeNivel();
+                                        }
+                                    }
+                                ]
+                            });
+                            alert_1.present();
+                        }
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    EdicaoNiveisPage.prototype.persistirNovaVersãoNoBanco = function (nome) {
+        this.nivelService.saveNiveisHistorico(this.niveis, nome);
+        this.nivelService.deleteNiveis();
+        this.nivelService.saveNiveis(this.niveis);
+        var toast = this.toastCtrl.create({
+            message: 'Nova estrutura de níveis salva com sucesso!',
+            duration: 3000,
+        });
+        toast.present();
+    };
+    EdicaoNiveisPage.prototype.irParaEdicaoDeNivel = function (nivel) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__edicao_nivel_edicao_nivel__["a" /* EdicaoNivelPage */], { nivel: nivel });
+    };
+    EdicaoNiveisPage.prototype.toggleEditable = function () {
+        //debug
+        console.log(this.niveis);
+        this.editableOn = !this.editableOn;
+        this.changeRef.detectChanges();
+    };
+    EdicaoNiveisPage.prototype.removerNivel = function (nivel) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Excluir Nível?',
+            message: 'Você quer excluir este nível?',
+            buttons: [
+                {
+                    text: 'Cancelar',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Excluir',
+                    handler: function () {
+                        var index = _this.niveis.indexOf(nivel);
+                        if (index !== -1) {
+                            _this.niveis.splice(index, 1);
+                        }
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    EdicaoNiveisPage.prototype.adicionar = function () {
+        var novoNivel = { nome: '', criterios: [] };
+        this.niveis.push(novoNivel);
+        this.changeRef.detectChanges();
+    };
+    EdicaoNiveisPage.prototype.getUrlImagemNivel = function (nivel) {
+        if (nivel === "Novo Nível")
+            return 'http://nqi.ufcspa.edu.br/wiki/selos-niveis/' + "Nível 0" + '.png';
+        return 'http://nqi.ufcspa.edu.br/wiki/selos-niveis/' + nivel + '.png';
+    };
+    EdicaoNiveisPage.prototype.validarNivel = function (nivel) {
+        if (!nivel)
+            return 'Não há nível';
+        if (!nivel.nome)
+            return 'Níveis devem possuir um nome';
+        if (!nivel.criterios || nivel.criterios.length == 0)
+            return 'Níveis devem possuir ao menos um Critério';
+        return null;
+    };
+    EdicaoNiveisPage.prototype.validarCriterio = function (criterio) {
+        if (!criterio)
+            return 'Não há critério';
+        if (!criterio.descricao || !criterio.nome)
+            return 'Critérios devem possuir nome e descrição';
+        //DEBUG
+        console.log('itens de avaliação do criterio:');
+        console.log(criterio.itensDeAvaliacao);
+        if (!criterio.itensDeAvaliacao || criterio.itensDeAvaliacao.length == 0)
+            return 'Critérios devem possuir ao menos um Item de Avaliação';
+        return null;
+    };
+    EdicaoNiveisPage.prototype.validarItensDeAvaliacao = function (item) {
+        if (!item)
+            return 'Deve haver ao menos um Item de Avaliação por critério';
+        if (!item.descricao)
+            return 'Itens de Avaliação devem possuir uma descrição';
+        return null;
+    };
+    EdicaoNiveisPage.prototype.validarEstruturaDeNíveis = function (niveis) {
+        var _this = this;
+        var msg = '';
+        if (!niveis)
+            return 'Não há níveis!';
+        niveis.forEach(function (nivel) {
+            var preAviso = '<br>' + (niveis.indexOf(nivel) + 1) + 'º Nível: ';
+            if (_this.validarNivel(nivel))
+                msg += preAviso + _this.validarNivel(nivel);
+            else
+                nivel.criterios = Object.values(nivel.criterios);
+            if (nivel.criterios)
+                nivel.criterios.forEach(function (criterio) {
+                    if (_this.validarCriterio(criterio))
+                        msg += preAviso + _this.validarCriterio(criterio);
+                    else
+                        criterio.itensDeAvaliacao = Object.values(criterio.itensDeAvaliacao);
+                    if (criterio.itensDeAvaliacao)
+                        criterio.itensDeAvaliacao.forEach(function (item) {
+                            if (_this.validarItensDeAvaliacao(item))
+                                msg += preAviso + _this.validarItensDeAvaliacao(item);
+                        });
+                });
+        });
+        if (msg)
+            console.log(msg);
+        else
+            console.log('Estrutura de Níveis validada');
+        return msg;
+    };
+    EdicaoNiveisPage.prototype.mostrarAlertDeErroNaEstrutura = function (msg) {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: 'Foram encontrados os seguintes erros na nova estrutura de níveis:'
+                + msg
+                + '<br> <br>'
+                + '<strong>A estrutura de níveis não será salva</strong>',
+            buttons: [
+                {
+                    text: 'Ok',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+            ]
+        });
+        alert.present();
+    };
+    EdicaoNiveisPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-edicao-niveis',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/edicao-niveis/edicao-niveis.html"*/'<!--\n  Generated template for the EdicaoNiveisPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>M3P</ion-title>\n\n    <ion-buttons end>\n      <button ion-button showWhen="android,ios" (click)="toggleEditable()">{{editableOn? \'Ok\' : \'Editar\'}}</button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat" text-center>\n\n    <ion-card>\n<ion-item>\n\n      <ion-label align-self-start><strong>Versão</strong></ion-label>\n      <ion-label>{{nivelHistorico? nivelHistorico.nome : ""}}</ion-label>\n\n\n\n</ion-item>\n    </ion-card>\n\n<ion-card>\n  <ion-list>\n    <ion-item-group [reorder]="editableOn" (ionItemReorder)="reorderItems($event)">\n\n      <button ion-item *ngFor="let nivel of niveis" (click)="irParaEdicaoDeNivel(nivel)">\n\n        <ion-avatar item-start="">\n          <img src="{{getUrlImagemNivel(nivel.nome)}}">\n        </ion-avatar>\n\n        <ion-label>{{nivel.nome ? nivel.nome : \'Novo Nível\'}}</ion-label>\n        <button *ngIf="editableOn" icon-only ion-button item-start color="danger" (click)="removerNivel(nivel);$event.stopPropagation();this.changeRef.detectChanges();">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n\n      </button>\n\n    </ion-item-group>\n\n  </ion-list>\n</ion-card>\n\n    <ion-row padding>\n      <button showWhen="core" padding class="centralized" ion-button (click)="toggleEditable()">\n        {{editableOn ? \'Confirmar\' : \'Editar\'}}\n      </button>\n\n      <button *ngIf="editableOn" ion-button align-self-end showWhen="core" color="danger" icon-only (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n    </ion-row>\n\n    <ion-row padding-top="100px">\n      <button padding class="centralized" color="danger" ion-button (click)="salvarNiveis()">\n        Salvar Níveis\n      </button>\n    </ion-row>\n\n  </div>\n\n  <ion-fab bottom right *ngIf="editableOn">\n    <button showWhen="android,ios" ion-fab color="danger" (click)="adicionar()"><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/edicao-niveis/edicao-niveis.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4__services_nivel__["a" /* NivelService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["AngularFireDatabase"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
+    ], EdicaoNiveisPage);
+    return EdicaoNiveisPage;
+}());
+
+//# sourceMappingURL=edicao-niveis.js.map
 
 /***/ }),
 
@@ -1522,43 +1627,43 @@ var map = {
 		10
 	],
 	"../pages/avaliacao/avaliacao.module": [
-		528,
+		536,
 		9
 	],
 	"../pages/cadastro-setor/cadastro-setor.module": [
-		529,
+		528,
 		8
 	],
 	"../pages/edicao-criterio/edicao-criterio.module": [
-		530,
+		529,
 		7
 	],
 	"../pages/edicao-niveis/edicao-niveis.module": [
-		531,
+		537,
 		6
 	],
 	"../pages/edicao-nivel/edicao-nivel.module": [
-		532,
+		530,
 		5
 	],
 	"../pages/login/login.module": [
-		533,
+		531,
 		4
 	],
 	"../pages/nivel/nivel.module": [
-		534,
+		532,
 		0
 	],
 	"../pages/pre-avaliacao/pre-avaliacao.module": [
-		535,
+		533,
 		3
 	],
 	"../pages/setor/setor.module": [
-		536,
+		534,
 		2
 	],
 	"../pages/setores/setores.module": [
-		537,
+		535,
 		1
 	]
 };
@@ -1928,10 +2033,10 @@ var AvaliacaoService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_setores_setores__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_setores_setores__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_pipes__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(520);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_angularfire2__);
@@ -1939,11 +2044,11 @@ var AvaliacaoService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_angularfire2_database__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__firebase_credentials__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_setor__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_cadastro_setor_cadastro_setor__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_setor_setor__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_pre_avaliacao_pre_avaliacao__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_avaliacao_avaliacao__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_nivel__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_cadastro_setor_cadastro_setor__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_setor_setor__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_pre_avaliacao_pre_avaliacao__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_avaliacao_avaliacao__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_nivel__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_avaliacao__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_toaster__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_avaliacao_criterios_avaliacao_criterios__ = __webpack_require__(168);
@@ -1951,14 +2056,14 @@ var AvaliacaoService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_avaliacao_anterior_avaliacao_anterior__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_avaliacao_criterios_anterior_avaliacao_criterios_anterior__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_avaliacao_itens_anterior_avaliacao_itens_anterior__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_login_login__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_login_login__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angularfire2_auth__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_angularfire2_auth__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_app_minimize__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_storage__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_autosize_autosize__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_edicao_niveis_edicao_niveis__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_edicao_nivel_edicao_nivel__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_edicao_niveis_edicao_niveis__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_edicao_nivel_edicao_nivel__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_edicao_criterio_edicao_criterio__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2035,16 +2140,16 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/avaliacao-criterios/avaliacao-criterios.module#AvaliacaoCriteriosPageModule', name: 'AvaliacaoCriteriosPage', segment: 'avaliacao-criterios', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao-itens-anterior/avaliacao-itens-anterior.module#AvaliacaoItensAnteriorPageModule', name: 'AvaliacaoItensAnteriorPage', segment: 'avaliacao-itens-anterior', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/avaliacao-itens/avaliacao-itens.module#AvaliacaoItensPageModule', name: 'AvaliacaoItensPage', segment: 'avaliacao-itens', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/avaliacao/avaliacao.module#AvaliacaoPageModule', name: 'AvaliacaoPage', segment: 'avaliacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-setor/cadastro-setor.module#CadastroSetorPageModule', name: 'CadastroSetorPage', segment: 'cadastro-setor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edicao-criterio/edicao-criterio.module#EdicaoCriterioPageModule', name: 'EdicaoCriterioPage', segment: 'edicao-criterio', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/edicao-niveis/edicao-niveis.module#EdicaoNiveisPageModule', name: 'EdicaoNiveisPage', segment: 'edicao-niveis', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edicao-nivel/edicao-nivel.module#EdicaoNivelPageModule', name: 'EdicaoNivelPage', segment: 'edicao-nivel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/nivel/nivel.module#NivelPageModule', name: 'NivelPage', segment: 'nivel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pre-avaliacao/pre-avaliacao.module#PreAvaliacaoPageModule', name: 'PreAvaliacaoPage', segment: 'pre-avaliacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/setor/setor.module#SetorPageModule', name: 'SetorPage', segment: 'setor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/setores/setores.module#SetoresPageModule', name: 'SetoresPage', segment: 'setores', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/setores/setores.module#SetoresPageModule', name: 'SetoresPage', segment: 'setores', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/avaliacao/avaliacao.module#AvaliacaoPageModule', name: 'AvaliacaoPage', segment: 'avaliacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/edicao-niveis/edicao-niveis.module#EdicaoNiveisPageModule', name: 'EdicaoNiveisPage', segment: 'edicao-niveis', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_28__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
@@ -2100,8 +2205,8 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_auth__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angularfire2_auth__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_app_minimize__ = __webpack_require__(310);
@@ -2154,7 +2259,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_6_angularfire2_auth__["AngularFireAuth"], __WEBPACK_IMPORTED_MODULE_7__ionic_native_app_minimize__["a" /* AppMinimize */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]])
     ], MyApp);
@@ -2170,7 +2275,7 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FIREBASE_CONFIG; });
-// DESENVOLVIMENTO
+// // DESENVOLVIMENTO
 // export const FIREBASE_CONFIG  = {
 //   apiKey: "AIzaSyCyARgZSkCnufQO11Pg-MSIaqZ0wz30ek0",
 //   authDomain: "m3p-app.firebaseapp.com",
@@ -2179,7 +2284,16 @@ var MyApp = /** @class */ (function () {
 //   storageBucket: "",
 //   messagingSenderId: "414887828407"
 // };
-// // //HOMOLOGAÇÃO
+// // TESTE
+// export const FIREBASE_CONFIG  = {
+//   apiKey: "AIzaSyAXnflD-gijV-F1fSEHYFcES-qds1FJRvs",
+//   authDomain: "m3p-app-teste.firebaseapp.com",
+//   databaseURL: "https://m3p-app-teste.firebaseio.com",
+//   projectId: "m3p-app-teste",
+//   storageBucket: "m3p-app-teste.appspot.com",
+//   messagingSenderId: "90681401277"
+// };
+// HOMOLOGAÇÃO
 var FIREBASE_CONFIG = {
     apiKey: "AIzaSyCUxGp5aBxzmNwmswp0OorPk8BBJN-kHII",
     authDomain: "m3p-app-homologacao.firebaseapp.com",
@@ -2188,9 +2302,7 @@ var FIREBASE_CONFIG = {
     storageBucket: "m3p-app-homologacao.appspot.com",
     messagingSenderId: "617182582356"
 };
-// !!!!!! UTILIZAR SOMENTE PARA DEPLOY !!!!!!
-//
-// //PRODUÇÃO
+// // PRODUÇÃO
 // export const FIREBASE_CONFIG  = {
 //   apiKey: "AIzaSyCqueAyPhnNRabWoIztAWuTSwdjqR1b3kc",
 //   authDomain: "m3p-app-producao.firebaseapp.com",
@@ -2320,309 +2432,6 @@ var SetorService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AvaliacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios_avaliacao_criterios__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setor__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__ = __webpack_require__(35);
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the AvaliacaoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AvaliacaoPage = /** @class */ (function () {
-    function AvaliacaoPage(navCtrl, navParams, alertCtrl, setorService, viewCtrl, toastCtrl, avaliacaoService, modalCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.setorService = setorService;
-        this.viewCtrl = viewCtrl;
-        this.toastCtrl = toastCtrl;
-        this.avaliacaoService = avaliacaoService;
-        this.modalCtrl = modalCtrl;
-        this.setor = this.navParams.get('setor');
-        this.avaliacaoRef = __assign({}, this.navParams.get('avaliacao')); // cópia
-    }
-    AvaliacaoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AvaliacaoPage');
-    };
-    AvaliacaoPage.prototype.ionViewWillUnload = function () {
-        if (this.avaliacaoSubscription)
-            this.avaliacaoSubscription.unsubscribe();
-    };
-    AvaliacaoPage.prototype.ngOnInit = function () {
-        var _this = this;
-        this.avaliacao$ = this.avaliacaoRef.snapshotChanges().map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
-        this.avaliacaoSubscription = this.avaliacao$.subscribe(function (data) {
-            _this.objAvaliacao = data;
-            _this.niveis = [];
-            Object.keys(_this.objAvaliacao.corpo).forEach(function (keyNivel) {
-                _this.objAvaliacao.corpo[keyNivel].key = keyNivel;
-                _this.niveis.push(_this.objAvaliacao.corpo[keyNivel]);
-            });
-        });
-    };
-    AvaliacaoPage.prototype.abrirCriterios = function (nivel) {
-        //Abrir página do nível com os critérios
-        var refNivel = 'avaliacoes' + '/' + this.setor.key + '/' + this.objAvaliacao.key + '/' + 'corpo' + '/' + nivel.key;
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios_avaliacao_criterios__["a" /* AvaliacaoCriteriosPage */], { nivel: nivel, refNivel: refNivel });
-    };
-    AvaliacaoPage.prototype.finalizarAvaliacaoClick = function () {
-        var nivelAtingido = this.getNivelAtingidoAutomaticamente();
-        var todosItensAvaliados = this.verificarTodosItensAvaliados();
-        if (todosItensAvaliados) {
-            var observacoesConformidade = this.verificarObservacoes(true);
-            var avaliacoesManuaisConformidade = this.verificarAvaliacoesManuais();
-            if (observacoesConformidade && avaliacoesManuaisConformidade)
-                this.finalizarAvaliacaoVerificandoConformidade(nivelAtingido);
-        }
-    };
-    AvaliacaoPage.prototype.finalizarAvaliacaoVerificandoConformidade = function (nivelAtingido) {
-        var _this = this;
-        var mensagemFinalizacao = 'Deseja finalizar avaliação do setor? <br><br> o nível atingido será: ' + '<strong>' + nivelAtingido + '<strong>';
-        if (this.objAvaliacao.dataInicioAvaliacaoComplementar)
-            mensagemFinalizacao = 'Deseja finalizar a avaliação complementar do setor? <br><br> o nível atingido será: ' + '<strong>' + nivelAtingido + '<strong> <br><br> <strong>Ao finalizar agora a avaliação não poderá ser reaberta.</strong>';
-        var alertFinalizar = this.alertCtrl.create({
-            title: 'Finalizar avaliação',
-            message: mensagemFinalizacao,
-            buttons: [
-                {
-                    text: 'Finalizar',
-                    handler: function () {
-                        _this.finalizarAvaliacao(nivelAtingido);
-                        console.log('Avaliação do setor ' + _this.setor.sigla + ' finalizada.');
-                    }
-                },
-                {
-                    text: 'Cancelar',
-                    role: 'cancel',
-                    handler: function () {
-                    }
-                }
-            ]
-        });
-        alertFinalizar.present();
-    };
-    AvaliacaoPage.prototype.finalizarAvaliacao = function (nivelAtingido) {
-        this.objAvaliacao.nivelAtingido = nivelAtingido;
-        if (this.objAvaliacao.dataInicioAvaliacaoComplementar)
-            this.objAvaliacao.dataFimAvaliacaoComplementar = this.avaliacaoService.getDataAgora();
-        else
-            this.objAvaliacao.dataFim = this.avaliacaoService.getDataAgora();
-        this.avaliacaoService.save(this.objAvaliacao);
-        this.setor.sendoAvaliado = false;
-        this.setor.nivel = nivelAtingido;
-        this.setor.ultimaAvaliacao = this.objAvaliacao.dataFim;
-        this.setorService.save(this.setor);
-        this.fecharPagina();
-        this.mostrarToastAvaliacaoFinalizada();
-    };
-    AvaliacaoPage.prototype.fecharPagina = function () {
-        this.viewCtrl.dismiss();
-    };
-    AvaliacaoPage.prototype.mostrarToastAvaliacaoFinalizada = function () {
-        var toast = this.toastCtrl.create({
-            message: 'Avaliação do setor ' + this.setor.sigla + ' finalizada.',
-            duration: 3000,
-            position: 'bottom'
-        });
-        toast.present();
-    };
-    AvaliacaoPage.prototype.getNivelAtingidoAutomaticamente = function () {
-        var _this = this;
-        var nivelAtingido;
-        var flagNivelNaoVerde = false;
-        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
-            var value = _this.objAvaliacao.corpo[i];
-            value.key = i;
-            return value;
-        });
-        corpo.forEach(function (nivel) {
-            if (!flagNivelNaoVerde && _this.avaliacaoService.newGetAvaliacaoNivel(nivel) === 'avaliacaoVerde')
-                nivelAtingido = nivel.nome;
-            else
-                flagNivelNaoVerde = true;
-        });
-        if (nivelAtingido)
-            return nivelAtingido;
-        else
-            return 'Nível 0';
-    };
-    AvaliacaoPage.prototype.verificarObservacoes = function (mostrarAlert) {
-        var _this = this;
-        var flagEmOrdem = true;
-        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
-            var value = _this.objAvaliacao.corpo[i];
-            value.key = i;
-            return value;
-        });
-        var faltantes = [];
-        corpo.forEach(function (nivel) {
-            //if (!flagEmOrdem) return;
-            if (nivel.criterios) {
-                nivel.criterios.forEach(function (criterio) {
-                    //if (!flagEmOrdem) return;
-                    criterio.itensDeAvaliacao.forEach(function (item) {
-                        if ((item.avaliacao == 'amarelo' || item.avaliacao == 'vermelho') && item.observacao === undefined) {
-                            flagEmOrdem = false;
-                            //DEBUG
-                            console.log("Observação faltante no item:", item);
-                            var obsrvacaoFaltanteString = nivel.nome + " > " + criterio.nome + " > Item " + item.ordem;
-                            faltantes.push(obsrvacaoFaltanteString);
-                            //return;
-                        }
-                    });
-                });
-            }
-        });
-        var faltantesString = "";
-        faltantes.forEach(function (string) {
-            faltantesString += string + '<br>';
-        });
-        if (!flagEmOrdem) {
-            var alertFaltamObservaoes = this.alertCtrl.create({
-                title: 'Observações Faltantes',
-                subTitle: 'Faltam observações em itens de valiação avaliados como Amarelo ou Vermelho.' + '<br><br><ion-item><strong>' + faltantesString + '<strong><ion-note>',
-                buttons: ['Ok']
-            });
-            if (mostrarAlert)
-                alertFaltamObservaoes.present();
-        }
-        return flagEmOrdem;
-    };
-    AvaliacaoPage.prototype.verificarTodosItensAvaliados = function () {
-        var _this = this;
-        var continuar = true;
-        var flagTodosAvaliados = true;
-        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
-            var value = _this.objAvaliacao.corpo[i];
-            value.key = i;
-            return value;
-        });
-        var flagNivelPretendido = false;
-        corpo.forEach(function (nivel) {
-            if (flagNivelPretendido)
-                return;
-            if (!flagTodosAvaliados)
-                return;
-            if (_this.objAvaliacao.nivelPretendido == nivel.nome)
-                flagNivelPretendido = true;
-            if (nivel.criterios) {
-                nivel.criterios.forEach(function (criterio) {
-                    if (!flagTodosAvaliados)
-                        return;
-                    criterio.itensDeAvaliacao.forEach(function (item) {
-                        if (!item.avaliacao) {
-                            flagTodosAvaliados = false;
-                            return;
-                        }
-                    });
-                });
-            }
-        });
-        if (!flagTodosAvaliados) {
-            continuar = false;
-            var alertAvaliacoesFaltantes = this.alertCtrl.create({
-                title: 'Avaliações Faltantes',
-                subTitle: 'Nem todos os itens correspondentes ao nível desejado foram avaliados, deseja continuar?',
-                buttons: [
-                    {
-                        text: 'Continuar',
-                        handler: function () {
-                            // Verifica avaliação novamente
-                            // sem levar em consideração esse
-                            // aspecto da verificação
-                            continuar = true;
-                            var nivelAtingido = _this.getNivelAtingidoAutomaticamente();
-                            //Checar conformidade da avaliação
-                            var observacoesConformidade = _this.verificarObservacoes(true);
-                            var avaliacoesManuaisConformidade = _this.verificarAvaliacoesManuais();
-                            //IF tudo ok
-                            if (observacoesConformidade && avaliacoesManuaisConformidade)
-                                _this.finalizarAvaliacaoVerificandoConformidade(nivelAtingido);
-                        }
-                    },
-                    {
-                        text: 'Cancelar',
-                        role: 'cancel',
-                    }
-                ]
-            });
-            alertAvaliacoesFaltantes.present();
-        }
-        return flagTodosAvaliados;
-    };
-    AvaliacaoPage.prototype.verificarAvaliacoesManuais = function () {
-        var _this = this;
-        var flagAvaliacoesManuaisConformidade = true;
-        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
-            var value = _this.objAvaliacao.corpo[i];
-            value.key = i;
-            return value;
-        });
-        corpo.forEach(function (nivel) {
-            if ((_this.avaliacaoService.newGetCorNivel(nivel) === 'avaliacaoAmarelo') && !nivel.avaliacaoManual) {
-                flagAvaliacoesManuaisConformidade = false;
-            }
-        });
-        if (!flagAvaliacoesManuaisConformidade) {
-            var alertAvaliacoesManuais = this.alertCtrl.create({
-                title: 'Avaliações Manuais Faltantes',
-                subTitle: 'Faltam avaliações manuais em níveis com critérios avaliados como Amarelo.',
-                buttons: ['Ok']
-            });
-            alertAvaliacoesManuais.present();
-        }
-        return flagAvaliacoesManuaisConformidade;
-    };
-    AvaliacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-avaliacao',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao\avaliacao.html"*/'<!--\n  Generated template for the AvaliacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Avaliação</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat">\n\n    <ion-card>\n      <ion-card-header><h1 text-center>{{setor?.sigla}}</h1></ion-card-header>\n      <ion-note><p text-center>Nível Pretendido: {{objAvaliacao?.nivelPretendido}}</p></ion-note>\n\n      <ion-list>\n\n      <button *ngFor="let nivel of niveis" ion-item  (click)="abrirCriterios(nivel)">\n        {{nivel.nome}}\n        <ion-icon item-end [color]="avaliacaoService.newGetCorNivel(nivel)" [name]="avaliacaoService.newGetAvaliacaoNivel(nivel) == \'avaliacaoManual\'? avaliacaoService.ICON_AVALIACAO_MANUAL : avaliacaoService.ICON_ESTRELA"></ion-icon>\n      </button>\n\n      </ion-list>\n    </ion-card>\n\n\n  <button ion-button round class="centralized" (click)="finalizarAvaliacaoClick()"> Finalizar Avaliação</button>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\avaliacao\avaliacao.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3__services_setor__["a" /* SetorService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__["a" /* AvaliacaoService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
-    ], AvaliacaoPage);
-    return AvaliacaoPage;
-}());
-
-//# sourceMappingURL=avaliacao.js.map
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroSetorPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
@@ -2675,7 +2484,7 @@ var CadastroSetorPage = /** @class */ (function () {
     };
     CadastroSetorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro-setor',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\cadastro-setor\cadastro-setor.html"*/'<!--\n  Generated template for the CadastroSetorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{nomePagina}} Setor</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n  <ion-card padding class="browser-compat">\n    <ion-card-content>\n\n      <form (ngSubmit)="registrarSetor(f.value)" #f="ngForm">\n        <!--<ion-row>-->\n          <!--<ion-col>-->\n            <ion-list>\n\n              <ion-item>\n                <ion-label color="dark">Sigla</ion-label>\n                <ion-input type="text" name="sigla" [(ngModel)]="setor.sigla" required ></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Nome Completo</ion-label>\n                <ion-input type="text" name="nome" [(ngModel)]="setor.nome" required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Vínculo</ion-label>\n                <ion-input type="text" name="vinculo" [(ngModel)]="setor.vinculo"></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Líder de Processo</ion-label>\n                <ion-input type="text" name="lider" [(ngModel)]="setor.lider"></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Email do Líder</ion-label>\n                <ion-input type="text" name="emailLider" [(ngModel)]="setor.emailLider"></ion-input>\n              </ion-item>\n\n            </ion-list>\n\n            <button padding ion-button full clear type="submit" [disabled]="!f.valid">{{nomeBotaoSalvar}}</button>\n\n      </form>\n\n    </ion-card-content>\n  </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\cadastro-setor\cadastro-setor.html"*/,
+            selector: 'page-cadastro-setor',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/cadastro-setor/cadastro-setor.html"*/'<!--\n  Generated template for the CadastroSetorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{nomePagina}} Setor</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n  <ion-card padding class="browser-compat">\n    <ion-card-content>\n\n      <form (ngSubmit)="registrarSetor(f.value)" #f="ngForm">\n        <!--<ion-row>-->\n          <!--<ion-col>-->\n            <ion-list>\n\n              <ion-item>\n                <ion-label color="dark">Sigla</ion-label>\n                <ion-input type="text" name="sigla" [(ngModel)]="setor.sigla" required ></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Nome Completo</ion-label>\n                <ion-input type="text" name="nome" [(ngModel)]="setor.nome" required></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Vínculo</ion-label>\n                <ion-input type="text" name="vinculo" [(ngModel)]="setor.vinculo"></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Líder de Processo</ion-label>\n                <ion-input type="text" name="lider" [(ngModel)]="setor.lider"></ion-input>\n              </ion-item>\n\n              <ion-item>\n                <ion-label color="dark">Email do Líder</ion-label>\n                <ion-input type="text" name="emailLider" [(ngModel)]="setor.emailLider"></ion-input>\n              </ion-item>\n\n            </ion-list>\n\n            <button padding ion-button full clear type="submit" [disabled]="!f.valid">{{nomeBotaoSalvar}}</button>\n\n      </form>\n\n    </ion-card-content>\n  </ion-card>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/cadastro-setor/cadastro-setor.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -2690,7 +2499,7 @@ var CadastroSetorPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 93:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2699,7 +2508,7 @@ var CadastroSetorPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(141);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2864,7 +2673,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n\n      <ion-row justify-content-center>\n          <ion-img style="background: transparent" width="260" height="260" src="http://nqi.ufcspa.edu.br/wiki/selos-niveis/logo.png"></ion-img>\n      </ion-row>\n\n      <form (ngSubmit)="login()" #f="ngForm">\n\n        <ion-card>\n          <ion-item>\n            <ion-label stacked>Email</ion-label>\n            <ion-input [(ngModel)]="email" name="email" type="text" value="" required></ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label stacked>Password</ion-label>\n            <ion-input [(ngModel)]="password" name="password" type="password" value="" required></ion-input>\n          </ion-item>\n        </ion-card>\n\n        <div padding>\n          <button ion-button block type="submit" [disabled]="!f.valid">Login</button>\n        </div>\n\n      </form>\n\n    <div text-center>\n      <ion-note >Núcleo de Qualidade Interna<br></ion-note>\n      <ion-note >UFCSPA<br></ion-note>\n      <BR>\n      <ion-note >M3P App<br></ion-note>\n    </div>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Rodrigo\Projetos\m3p-appv1\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="bg-image">\n  <div class="browser-compat">\n\n\n      <ion-row justify-content-center>\n          <ion-img style="background: transparent" width="260" height="260" src="http://nqi.ufcspa.edu.br/wiki/selos-niveis/logo.png"></ion-img>\n      </ion-row>\n\n      <form (ngSubmit)="login()" #f="ngForm">\n\n        <ion-card>\n          <ion-item>\n            <ion-label stacked>Email</ion-label>\n            <ion-input [(ngModel)]="email" name="email" type="text" value="" required></ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label stacked>Password</ion-label>\n            <ion-input [(ngModel)]="password" name="password" type="password" value="" required></ion-input>\n          </ion-item>\n        </ion-card>\n\n        <div padding>\n          <button ion-button block type="submit" [disabled]="!f.valid">Login</button>\n        </div>\n\n      </form>\n\n    <div text-center>\n      <ion-note >Núcleo de Qualidade Interna<br></ion-note>\n      <ion-note >UFCSPA<br></ion-note>\n      <BR>\n      <ion-note >M3P App<br></ion-note>\n    </div>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["AngularFireAuth"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], LoginPage);
@@ -2872,6 +2681,309 @@ var LoginPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AvaliacaoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios_avaliacao_criterios__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_setor__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__ = __webpack_require__(35);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the AvaliacaoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AvaliacaoPage = /** @class */ (function () {
+    function AvaliacaoPage(navCtrl, navParams, alertCtrl, setorService, viewCtrl, toastCtrl, avaliacaoService, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.setorService = setorService;
+        this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
+        this.avaliacaoService = avaliacaoService;
+        this.modalCtrl = modalCtrl;
+        this.setor = this.navParams.get('setor');
+        this.avaliacaoRef = __assign({}, this.navParams.get('avaliacao')); // cópia
+    }
+    AvaliacaoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AvaliacaoPage');
+    };
+    AvaliacaoPage.prototype.ionViewWillUnload = function () {
+        if (this.avaliacaoSubscription)
+            this.avaliacaoSubscription.unsubscribe();
+    };
+    AvaliacaoPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.avaliacao$ = this.avaliacaoRef.snapshotChanges().map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
+        this.avaliacaoSubscription = this.avaliacao$.subscribe(function (data) {
+            _this.objAvaliacao = data;
+            _this.niveis = [];
+            Object.keys(_this.objAvaliacao.corpo).forEach(function (keyNivel) {
+                _this.objAvaliacao.corpo[keyNivel].key = keyNivel;
+                _this.niveis.push(_this.objAvaliacao.corpo[keyNivel]);
+            });
+        });
+    };
+    AvaliacaoPage.prototype.abrirCriterios = function (nivel) {
+        //Abrir página do nível com os critérios
+        var refNivel = 'avaliacoes' + '/' + this.setor.key + '/' + this.objAvaliacao.key + '/' + 'corpo' + '/' + nivel.key;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__avaliacao_criterios_avaliacao_criterios__["a" /* AvaliacaoCriteriosPage */], { nivel: nivel, refNivel: refNivel });
+    };
+    AvaliacaoPage.prototype.finalizarAvaliacaoClick = function () {
+        var nivelAtingido = this.getNivelAtingidoAutomaticamente();
+        var todosItensAvaliados = this.verificarTodosItensAvaliados();
+        if (todosItensAvaliados) {
+            var observacoesConformidade = this.verificarObservacoes(true);
+            var avaliacoesManuaisConformidade = this.verificarAvaliacoesManuais();
+            if (observacoesConformidade && avaliacoesManuaisConformidade)
+                this.finalizarAvaliacaoVerificandoConformidade(nivelAtingido);
+        }
+    };
+    AvaliacaoPage.prototype.finalizarAvaliacaoVerificandoConformidade = function (nivelAtingido) {
+        var _this = this;
+        var mensagemFinalizacao = 'Deseja finalizar avaliação do setor? <br><br> o nível atingido será: ' + '<strong>' + nivelAtingido + '<strong>';
+        if (this.objAvaliacao.dataInicioAvaliacaoComplementar)
+            mensagemFinalizacao = 'Deseja finalizar a avaliação complementar do setor? <br><br> o nível atingido será: ' + '<strong>' + nivelAtingido + '<strong> <br><br> <strong>Ao finalizar agora a avaliação não poderá ser reaberta.</strong>';
+        var alertFinalizar = this.alertCtrl.create({
+            title: 'Finalizar avaliação',
+            message: mensagemFinalizacao,
+            buttons: [
+                {
+                    text: 'Finalizar',
+                    handler: function () {
+                        _this.finalizarAvaliacao(nivelAtingido);
+                        console.log('Avaliação do setor ' + _this.setor.sigla + ' finalizada.');
+                    }
+                },
+                {
+                    text: 'Cancelar',
+                    role: 'cancel',
+                    handler: function () {
+                    }
+                }
+            ]
+        });
+        alertFinalizar.present();
+    };
+    AvaliacaoPage.prototype.finalizarAvaliacao = function (nivelAtingido) {
+        this.objAvaliacao.nivelAtingido = nivelAtingido;
+        if (this.objAvaliacao.dataInicioAvaliacaoComplementar)
+            this.objAvaliacao.dataFimAvaliacaoComplementar = this.avaliacaoService.getDataAgora();
+        else
+            this.objAvaliacao.dataFim = this.avaliacaoService.getDataAgora();
+        this.avaliacaoService.save(this.objAvaliacao);
+        this.setor.sendoAvaliado = false;
+        this.setor.nivel = nivelAtingido;
+        this.setor.ultimaAvaliacao = this.objAvaliacao.dataFim;
+        this.setorService.save(this.setor);
+        this.fecharPagina();
+        this.mostrarToastAvaliacaoFinalizada();
+    };
+    AvaliacaoPage.prototype.fecharPagina = function () {
+        this.viewCtrl.dismiss();
+    };
+    AvaliacaoPage.prototype.mostrarToastAvaliacaoFinalizada = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Avaliação do setor ' + this.setor.sigla + ' finalizada.',
+            duration: 3000,
+            position: 'bottom'
+        });
+        toast.present();
+    };
+    AvaliacaoPage.prototype.getNivelAtingidoAutomaticamente = function () {
+        var _this = this;
+        var nivelAtingido;
+        var flagNivelNaoVerde = false;
+        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
+            var value = _this.objAvaliacao.corpo[i];
+            value.key = i;
+            return value;
+        });
+        corpo.forEach(function (nivel) {
+            if (!flagNivelNaoVerde && _this.avaliacaoService.newGetAvaliacaoNivel(nivel) === 'avaliacaoVerde')
+                nivelAtingido = nivel.nome;
+            else
+                flagNivelNaoVerde = true;
+        });
+        if (nivelAtingido)
+            return nivelAtingido;
+        else
+            return 'Nenhum Nível';
+    };
+    AvaliacaoPage.prototype.verificarObservacoes = function (mostrarAlert) {
+        var _this = this;
+        var flagEmOrdem = true;
+        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
+            var value = _this.objAvaliacao.corpo[i];
+            value.key = i;
+            return value;
+        });
+        var faltantes = [];
+        corpo.forEach(function (nivel) {
+            //if (!flagEmOrdem) return;
+            if (nivel.criterios) {
+                nivel.criterios.forEach(function (criterio) {
+                    //if (!flagEmOrdem) return;
+                    criterio.itensDeAvaliacao.forEach(function (item) {
+                        if ((item.avaliacao == 'amarelo' || item.avaliacao == 'vermelho') && item.observacao === undefined) {
+                            flagEmOrdem = false;
+                            //DEBUG
+                            console.log("Observação faltante no item:", item);
+                            var obsrvacaoFaltanteString = nivel.nome + " > " + criterio.nome + " > Item " + item.ordem;
+                            faltantes.push(obsrvacaoFaltanteString);
+                            //return;
+                        }
+                    });
+                });
+            }
+        });
+        var faltantesString = "";
+        faltantes.forEach(function (string) {
+            faltantesString += string + '<br>';
+        });
+        if (!flagEmOrdem) {
+            var alertFaltamObservaoes = this.alertCtrl.create({
+                title: 'Observações Faltantes',
+                subTitle: 'Faltam observações em itens de valiação avaliados como Amarelo ou Vermelho.' + '<br><br><ion-item><strong>' + faltantesString + '<strong><ion-note>',
+                buttons: ['Ok']
+            });
+            if (mostrarAlert)
+                alertFaltamObservaoes.present();
+        }
+        return flagEmOrdem;
+    };
+    AvaliacaoPage.prototype.verificarTodosItensAvaliados = function () {
+        var _this = this;
+        var continuar = true;
+        var flagTodosAvaliados = true;
+        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
+            var value = _this.objAvaliacao.corpo[i];
+            value.key = i;
+            return value;
+        });
+        var flagNivelPretendido = false;
+        corpo.forEach(function (nivel) {
+            if (flagNivelPretendido)
+                return;
+            if (!flagTodosAvaliados)
+                return;
+            if (_this.objAvaliacao.nivelPretendido == nivel.nome)
+                flagNivelPretendido = true;
+            if (nivel.criterios) {
+                nivel.criterios.forEach(function (criterio) {
+                    if (!flagTodosAvaliados)
+                        return;
+                    criterio.itensDeAvaliacao.forEach(function (item) {
+                        if (!item.avaliacao) {
+                            flagTodosAvaliados = false;
+                            return;
+                        }
+                    });
+                });
+            }
+        });
+        if (!flagTodosAvaliados) {
+            continuar = false;
+            var alertAvaliacoesFaltantes = this.alertCtrl.create({
+                title: 'Avaliações Faltantes',
+                subTitle: 'Nem todos os itens correspondentes ao nível desejado foram avaliados, deseja continuar?',
+                buttons: [
+                    {
+                        text: 'Continuar',
+                        handler: function () {
+                            // Verifica avaliação novamente
+                            // sem levar em consideração esse
+                            // aspecto da verificação
+                            continuar = true;
+                            var nivelAtingido = _this.getNivelAtingidoAutomaticamente();
+                            //Checar conformidade da avaliação
+                            var observacoesConformidade = _this.verificarObservacoes(true);
+                            var avaliacoesManuaisConformidade = _this.verificarAvaliacoesManuais();
+                            //IF tudo ok
+                            if (observacoesConformidade && avaliacoesManuaisConformidade)
+                                _this.finalizarAvaliacaoVerificandoConformidade(nivelAtingido);
+                        }
+                    },
+                    {
+                        text: 'Cancelar',
+                        role: 'cancel',
+                    }
+                ]
+            });
+            alertAvaliacoesFaltantes.present();
+        }
+        return flagTodosAvaliados;
+    };
+    AvaliacaoPage.prototype.verificarAvaliacoesManuais = function () {
+        var _this = this;
+        var flagAvaliacoesManuaisConformidade = true;
+        var corpo = Object.keys(this.objAvaliacao.corpo).map(function (i) {
+            var value = _this.objAvaliacao.corpo[i];
+            value.key = i;
+            return value;
+        });
+        corpo.forEach(function (nivel) {
+            if ((_this.avaliacaoService.newGetCorNivel(nivel) === 'avaliacaoAmarelo') && !nivel.avaliacaoManual) {
+                flagAvaliacoesManuaisConformidade = false;
+            }
+        });
+        if (!flagAvaliacoesManuaisConformidade) {
+            var alertAvaliacoesManuais = this.alertCtrl.create({
+                title: 'Avaliações Manuais Faltantes',
+                subTitle: 'Faltam avaliações manuais em níveis com critérios avaliados como Amarelo.',
+                buttons: ['Ok']
+            });
+            alertAvaliacoesManuais.present();
+        }
+        return flagAvaliacoesManuaisConformidade;
+    };
+    AvaliacaoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-avaliacao',template:/*ion-inline-start:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao/avaliacao.html"*/'<!--\n  Generated template for the AvaliacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Avaliação</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-image">\n\n  <div class="browser-compat">\n\n    <ion-card>\n      <ion-card-header><h1 text-center>{{setor?.sigla}}</h1></ion-card-header>\n      <ion-note><p text-center>Nível Pretendido: {{objAvaliacao?.nivelPretendido}}</p></ion-note>\n\n      <ion-list>\n\n      <button *ngFor="let nivel of niveis" ion-item  (click)="abrirCriterios(nivel)">\n        {{nivel.nome}}\n        <ion-icon item-end [color]="avaliacaoService.newGetCorNivel(nivel)" [name]="avaliacaoService.newGetAvaliacaoNivel(nivel) == \'avaliacaoManual\'? avaliacaoService.ICON_AVALIACAO_MANUAL : avaliacaoService.ICON_ESTRELA"></ion-icon>\n      </button>\n\n      </ion-list>\n    </ion-card>\n\n\n  <button ion-button round class="centralized" (click)="finalizarAvaliacaoClick()"> Finalizar Avaliação</button>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigofgiglio/WebstormProjects/m3p-appv1/src/pages/avaliacao/avaliacao.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__services_setor__["a" /* SetorService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_4__services_avaliacao__["a" /* AvaliacaoService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
+    ], AvaliacaoPage);
+    return AvaliacaoPage;
+}());
+
+//# sourceMappingURL=avaliacao.js.map
 
 /***/ })
 
